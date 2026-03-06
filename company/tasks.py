@@ -32,25 +32,27 @@ Be decisive. Prioritize one clear product at a time. Assign tasks to 'engineer' 
 
 def create_engineering_task(engineer_agent, context: str) -> Task:
     """Engineer: implement backlog tasks, write code and tests."""
+    name = engineer_agent.role
     return Task(
-        description=f"""You are the Engineer. Implement tasks assigned to you.
+        description=f"""You are {name}. Implement tasks assigned to 'engineer' in the backlog.
 
 Context from the company state:
 {context}
 
 Your responsibilities:
-1. Call get_tasks_for_agent(assigned_to='engineer', status='todo') to get your tasks.
-2. For EACH task, you MUST follow this EXACT sequence one by one:
+1. Call get_tasks_for_agent(assigned_to='engineer', status='todo') to get available tasks.
+2. IMPORTANT: If there are multiple engineers working in parallel, check the latest backlog again or pick a task that isn't already being worked on.
+3. For EACH task, you MUST follow this EXACT sequence one by one:
     a. update_task_status(task_id, 'in_progress')
     b. Read the product spec to understand requirements.
     c. Implement the work by calling write_engineering_file(product_slug, filename, content) for EACH file you create.
     d. update_task_status(task_id, 'done')
-3. IMPORTANT: Do NOT try to output multiple files or status updates in a single turn. Call ONE tool, wait for the observation, then call the next tool.
-4. Write clean, tested code. Prefer small, focused files.
-5. Append to your log (append_to_agent_log(agent='engineer', content=...)) AFTER you finish each task or if you get blocked.
+4. IMPORTANT: Do NOT try to output multiple files or status updates in a single turn. Call ONE tool, wait for the observation, then call the next tool.
+5. Write clean, tested code. Prefer small, focused files.
+6. Append to your log (append_to_agent_log(agent='engineer', content=...)) AFTER you finish each task or if you get blocked.
 
 If there are no tasks, summarize that and suggest what the CEO might add. Still log your check.""",
-        expected_output="A summary of tasks completed (or 'no tasks'). Code written to company_state/products/<slug>/engineering/. Logged to engineer.md.",
+        expected_output=f"A summary of tasks completed by {name}. Code written to company_state/products/<slug>/engineering/. Logged to engineer.md.",
         agent=engineer_agent,
         context=[],
     )
@@ -77,20 +79,48 @@ If there are no tasks, still create at least one useful marketing asset (e.g. la
     )
 
 
+def create_summary_task(ceo_agent, context: str) -> Task:
+    """CEO: Final summary of the cycle's progress."""
+    return Task(
+        description=f"""You are the CEO. Review the work done by the Engineers and Marketing in this cycle.
+        
+Context:
+{context}
+
+Provide a high-level summary of the achievements in this cycle and what the focus should be for the next cycle.
+        """,
+        expected_output="A final high-level summary of the cycle's progress and next steps.",
+        agent=ceo_agent,
+        context=[],
+    )
+
+
 def create_company_crew(context: str) -> Crew:
-    """Create and return a Crew with CEO, Engineer, and Marketing tasks."""
+    """Create and return a Crew with CEO, two Engineers, and Marketing tasks."""
     ceo = create_ceo_agent()
-    engineer = create_engineer_agent()
+    engineer1 = create_engineer_agent(name="Engineer 1")
+    engineer2 = create_engineer_agent(name="Engineer 2")
     marketing = create_marketing_agent()
 
     ideation = create_ideation_task(ceo, context)
-    engineering = create_engineering_task(engineer, context)
+    
+    # Enable async_execution for parallel work
+    engineering1 = create_engineering_task(engineer1, context)
+    engineering1.async_execution = True
+    
+    engineering2 = create_engineering_task(engineer2, context)
+    engineering2.async_execution = True
+    
     marketing_task = create_marketing_task(marketing, context)
+    marketing_task.async_execution = True
+    
+    summary = create_summary_task(ceo, context)
 
-    # Sequential: CEO first (sets direction), then Engineer, then Marketing
+    # When async_execution is True, the crew will start these tasks concurrently.
+    # We end with a synchronous summary task to synchronize the parallel tasks.
     return Crew(
-        agents=[ceo, engineer, marketing],
-        tasks=[ideation, engineering, marketing_task],
+        agents=[ceo, engineer1, engineer2, marketing],
+        tasks=[ideation, engineering1, engineering2, marketing_task, summary],
         process=Process.sequential,
         verbose=True,
     )

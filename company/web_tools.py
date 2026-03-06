@@ -1,6 +1,10 @@
 """Web research tools for CEO and Marketing agents."""
 
+import warnings
 from crewai.tools import tool
+
+# Suppress the duckduckgo_search rename warning
+warnings.filterwarnings("ignore", message="This package .* has been renamed to ddgs")
 
 try:
     from duckduckgo_search import DDGS

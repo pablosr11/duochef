@@ -66,12 +66,12 @@ def create_ceo_agent() -> Agent:
     )
 
 
-def create_engineer_agent() -> Agent:
+def create_engineer_agent(name: str = "Engineer") -> Agent:
     """Engineer: implements CEO plans and Marketing requests, writes code and tests."""
     return Agent(
-        role="Engineer",
+        role=f"{name}",
         goal="Take assignments from the CEO and Marketing, implement them as code and tests, and ensure the best possible product quality.",
-        backstory="""You are a skilled software engineer. You read the backlog for tasks assigned to you,
+        backstory=f"""You are {name}, a skilled software engineer. You read the backlog for tasks assigned to 'engineer',
         implement features and fixes, write tests, and update task status. You work from product specs
         and ensure your code is clean, tested, and maintainable. You log your progress and decisions.
         You only write code within the product's engineering/ directory.""",
@@ -80,6 +80,9 @@ def create_engineer_agent() -> Agent:
         verbose=True,
         allow_delegation=False,
     )
+
+
+
 
 
 def create_marketing_agent() -> Agent:
