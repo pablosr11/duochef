@@ -23,7 +23,7 @@ Your responsibilities:
 3. Use web_search_and_summarize for market research when validating ideas or understanding competitors.
 4. Always append_to_agent_log(agent='ceo', content=...) to record your decisions and rationale.
 
-Be decisive. Prioritize one clear product at a time. Assign tasks to 'engineer' or 'marketing' with clear titles and descriptions.""",
+Be decisive. Prioritize one clear product at a time. Assign tasks to 'engineer' or 'marketing' with clear titles and descriptions. IMPORTANT: Do NOT call multiple tools in a single turn. Call ONE tool, wait for the observation, then proceed.""",
         expected_output="A brief summary of what you decided: product direction, tasks added, and key critique points. Logged to ceo.md.",
         agent=ceo_agent,
         context=[],
@@ -40,9 +40,14 @@ Context from the company state:
 
 Your responsibilities:
 1. Call get_tasks_for_agent(assigned_to='engineer', status='todo') to get your tasks.
-2. For each task: update_task_status(task_id, 'in_progress'), read the product spec, implement the work in the product's engineering/ directory (write_engineering_file), then update_task_status(task_id, 'done').
-3. Write clean, tested code. Prefer small, focused files.
-4. Append to your log (append_to_agent_log(agent='engineer', content=...)) with what you built and any blockers.
+2. For EACH task, you MUST follow this EXACT sequence one by one:
+    a. update_task_status(task_id, 'in_progress')
+    b. Read the product spec to understand requirements.
+    c. Implement the work by calling write_engineering_file(product_slug, filename, content) for EACH file you create.
+    d. update_task_status(task_id, 'done')
+3. IMPORTANT: Do NOT try to output multiple files or status updates in a single turn. Call ONE tool, wait for the observation, then call the next tool.
+4. Write clean, tested code. Prefer small, focused files.
+5. Append to your log (append_to_agent_log(agent='engineer', content=...)) AFTER you finish each task or if you get blocked.
 
 If there are no tasks, summarize that and suggest what the CEO might add. Still log your check.""",
         expected_output="A summary of tasks completed (or 'no tasks'). Code written to company_state/products/<slug>/engineering/. Logged to engineer.md.",
@@ -65,7 +70,7 @@ Your responsibilities:
 3. Use web_search_and_summarize for market trends, competitor positioning, or audience research when helpful.
 4. Append to your log (append_to_agent_log(agent='marketing', content=...)) with what you created and why.
 
-If there are no tasks, still create at least one useful marketing asset (e.g. landing_page.md) for the active product if one exists. Focus on how to get more people to visit and use the product.""",
+If there are no tasks, still create at least one useful marketing asset (e.g. landing_page.md) for the active product if one exists. Focus on how to get more people to visit and use the product. IMPORTANT: Do NOT call multiple tools in a single turn. Call ONE tool, wait for the observation, then proceed.""",
         expected_output="A summary of marketing assets created. Files in company_state/products/<slug>/marketing/. Logged to marketing.md.",
         agent=marketing_agent,
         context=[],

@@ -36,6 +36,33 @@ def _should_try_next_model(exc: Exception) -> bool:
     return any(m in msg for m in retry_markers)
 
 
+def _print_session_summary(result) -> None:
+    """Print a structured summary of the crew's execution."""
+    print("\n" + "="*60)
+    print("🚀 SESSION SUMMARY")
+    print("="*60)
+    
+    if hasattr(result, 'tasks_output') and result.tasks_output:
+        for i, task_output in enumerate(result.tasks_output, 1):
+            agent_role = getattr(task_output, 'agent', 'Unknown Agent')
+            # Handle if agent is an object with a role attribute
+            if not isinstance(agent_role, str) and hasattr(agent_role, 'role'):
+                agent_role = agent_role.role
+            
+            print(f"\n📍 Task {i}: {task_output.description[:100]}...")
+            print(f"👤 Agent: {agent_role}")
+            print(f"✅ Output: {task_output.raw[:300]}...")
+            print("-" * 30)
+    else:
+        print(f"Final result: {result}")
+        
+    if hasattr(result, 'token_usage') and result.token_usage:
+        usage = result.token_usage
+        print(f"\n📊 Token Usage: {usage}")
+    
+    print("="*60 + "\n")
+
+
 def run_cycle(cycle_num: int) -> None:
     """Run one idea → build → market cycle."""
     ensure_state_tree()
@@ -52,12 +79,15 @@ def run_cycle(cycle_num: int) -> None:
         try:
             crew = create_company_crew(context)
             result = crew.kickoff()
-            print(f"\nCycle {cycle_num} result: {result}")
+            
+            # Print the detailed summary
+            _print_session_summary(result)
+            
             append_company_changelog(
                 title=f"Cycle {cycle_num}",
                 details=(
                     f"Model used: {os.getenv('OPENAI_MODEL_NAME')}\n\n"
-                    f"Result (raw):\n\n{result}\n"
+                    f"Result (summary):\n\n{result.raw[:2000]}\n"
                 ),
             )
             return

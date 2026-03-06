@@ -1,7 +1,7 @@
 """File-based state and progress tracking for the agent company."""
 
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from company import (
@@ -63,7 +63,7 @@ def add_task(
         "assigned_to": assigned_to,
         "status": status,
         "product_slug": product_slug,
-        "created_at": datetime.now(datetime.UTC).isoformat(),
+        "created_at": datetime.now(timezone.utc).isoformat(),
     }
     backlog["tasks"] = backlog.get("tasks", []) + [task]
     backlog["next_id"] = task_id + 1
@@ -77,7 +77,7 @@ def update_task_status(task_id: int, status: str) -> bool:
     for t in backlog.get("tasks", []):
         if t["id"] == task_id:
             t["status"] = status
-            t["updated_at"] = datetime.now(datetime.UTC).isoformat()
+            t["updated_at"] = datetime.now(timezone.utc).isoformat()
             save_backlog(backlog)
             return True
     return False
@@ -140,7 +140,7 @@ def append_log(agent: str, content: str) -> None:
     """Append a time-stamped entry to an agent's log."""
     ensure_state_tree()
     path = log_path(agent)
-    timestamp = datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     entry = f"\n## {timestamp}\n\n{content}\n"
     with open(path, "a", encoding="utf-8") as f:
         f.write(entry)
@@ -149,7 +149,7 @@ def append_log(agent: str, content: str) -> None:
 def append_company_changelog(title: str, details: str) -> None:
     """Append an entry to company_state/changelog.md for each cycle/iteration."""
     ensure_state_tree()
-    timestamp = datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     entry = f"\n## {timestamp} — {title}\n\n{details}\n"
     if not CHANGELOG_PATH.exists():
         CHANGELOG_PATH.write_text("# Company State Changelog\n\n", encoding="utf-8")
