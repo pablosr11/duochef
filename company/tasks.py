@@ -1,0 +1,91 @@
+"""CrewAI tasks and crew for the autonomous company."""
+
+from crewai import Crew, Process, Task
+
+from company.agents import (
+    create_ceo_agent,
+    create_engineer_agent,
+    create_marketing_agent,
+)
+
+
+def create_ideation_task(ceo_agent, context: str) -> Task:
+    """CEO: ideation, critique, and backlog management."""
+    return Task(
+        description=f"""You are the CEO. Review the current company state and decide what to do next.
+
+Context from the company state:
+{context}
+
+Your responsibilities:
+1. If there is no active product or the current product needs a new direction: propose a product idea, write a spec (use write_product_spec), set it as active (set_active_product), and add tasks for the Engineer and Marketing (add_task_to_backlog).
+2. If there is an active product: critique the current direction. Read recent logs from Engineer and Marketing. If their work is off-track, add corrective tasks. If it looks good, add follow-up tasks to improve or expand.
+3. Use web_search_and_summarize for market research when validating ideas or understanding competitors.
+4. Always append_to_agent_log(agent='ceo', content=...) to record your decisions and rationale.
+
+Be decisive. Prioritize one clear product at a time. Assign tasks to 'engineer' or 'marketing' with clear titles and descriptions.""",
+        expected_output="A brief summary of what you decided: product direction, tasks added, and key critique points. Logged to ceo.md.",
+        agent=ceo_agent,
+        context=[],
+    )
+
+
+def create_engineering_task(engineer_agent, context: str) -> Task:
+    """Engineer: implement backlog tasks, write code and tests."""
+    return Task(
+        description=f"""You are the Engineer. Implement tasks assigned to you.
+
+Context from the company state:
+{context}
+
+Your responsibilities:
+1. Call get_tasks_for_agent(assigned_to='engineer', status='todo') to get your tasks.
+2. For each task: update_task_status(task_id, 'in_progress'), read the product spec, implement the work in the product's engineering/ directory (write_engineering_file), then update_task_status(task_id, 'done').
+3. Write clean, tested code. Prefer small, focused files.
+4. Append to your log (append_to_agent_log(agent='engineer', content=...)) with what you built and any blockers.
+
+If there are no tasks, summarize that and suggest what the CEO might add. Still log your check.""",
+        expected_output="A summary of tasks completed (or 'no tasks'). Code written to company_state/products/<slug>/engineering/. Logged to engineer.md.",
+        agent=engineer_agent,
+        context=[],
+    )
+
+
+def create_marketing_task(marketing_agent, context: str) -> Task:
+    """Marketing: create campaigns and growth assets."""
+    return Task(
+        description=f"""You are the Marketing lead. Create assets to drive traffic and engagement.
+
+Context from the company state:
+{context}
+
+Your responsibilities:
+1. Check get_tasks_for_agent(assigned_to='marketing', status='todo') for marketing tasks.
+2. Read the active product spec. Create marketing assets: landing page copy, email drafts, social posts, growth experiments. Use write_marketing_file to save them.
+3. Use web_search_and_summarize for market trends, competitor positioning, or audience research when helpful.
+4. Append to your log (append_to_agent_log(agent='marketing', content=...)) with what you created and why.
+
+If there are no tasks, still create at least one useful marketing asset (e.g. landing_page.md) for the active product if one exists. Focus on how to get more people to visit and use the product.""",
+        expected_output="A summary of marketing assets created. Files in company_state/products/<slug>/marketing/. Logged to marketing.md.",
+        agent=marketing_agent,
+        context=[],
+    )
+
+
+def create_company_crew(context: str) -> Crew:
+    """Create and return a Crew with CEO, Engineer, and Marketing tasks."""
+    ceo = create_ceo_agent()
+    engineer = create_engineer_agent()
+    marketing = create_marketing_agent()
+
+    ideation = create_ideation_task(ceo, context)
+    engineering = create_engineering_task(engineer, context)
+    marketing_task = create_marketing_task(marketing, context)
+
+    # Sequential: CEO first (sets direction), then Engineer, then Marketing
+    return Crew(
+        agents=[ceo, engineer, marketing],
+        tasks=[ideation, engineering, marketing_task],
+        process=Process.sequential,
+        verbose=True,
+    )
