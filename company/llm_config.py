@@ -58,3 +58,8 @@ def get_engineer_llm() -> LLM:
 def get_marketing_llm() -> LLM:
     """Marketing uses moderate creativity."""
     return get_openrouter_llm(temperature=0.6)
+
+
+def get_qa_llm() -> LLM:
+    """QA uses low temperature for consistent verification."""
+    return get_openrouter_llm(temperature=0.2)

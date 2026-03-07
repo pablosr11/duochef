@@ -7,6 +7,8 @@ from company.file_tools import (
     append_to_agent_log,
     get_tasks_for_agent,
     read_backlog,
+    read_engineering_file,
+    read_marketing_file,
     read_product_spec,
     read_recent_logs,
     set_active_product,
@@ -16,7 +18,12 @@ from company.file_tools import (
     write_product_spec,
 )
 from company.git_tools import git_push_to_remote, git_set_remote
-from company.llm_config import get_ceo_llm, get_engineer_llm, get_marketing_llm
+from company.llm_config import (
+    get_ceo_llm,
+    get_engineer_llm,
+    get_marketing_llm,
+    get_qa_llm,
+)
 from company.web_tools import web_search_and_summarize
 
 # Shared file tools for all agents
@@ -28,28 +35,42 @@ CEO_FILE_TOOLS = [
     append_to_agent_log,
     read_recent_logs,
     read_product_spec,
+    read_engineering_file, # CEO can review
+    read_marketing_file,
 ]
 ENGINEER_FILE_TOOLS = [
     read_backlog,
     get_tasks_for_agent,
     update_task_status,
     read_product_spec,
+    read_engineering_file,
     write_engineering_file,
     append_to_agent_log,
     read_recent_logs,
-    git_push_to_remote, # Engineer can push
-    git_set_remote,    # Engineer can set remote
+    git_push_to_remote,
+    git_set_remote,
 ]
 MARKETING_FILE_TOOLS = [
     read_backlog,
     read_product_spec,
+    read_marketing_file,
     write_marketing_file,
     append_to_agent_log,
     read_recent_logs,
-    git_push_to_remote, # Marketing can push (for landing pages)
+    git_push_to_remote,
+]
+QA_FILE_TOOLS = [
+    read_backlog,
+    get_tasks_for_agent,
+    update_task_status,
+    read_product_spec,
+    read_engineering_file,
+    read_marketing_file,
+    append_to_agent_log,
+    read_recent_logs,
 ]
 
-# Web research for CEO and Marketing
+# Web research for CEO, Marketing, and QA
 WEB_TOOLS = [web_search_and_summarize]
 
 
@@ -86,9 +107,6 @@ def create_engineer_agent(name: str = "Engineer") -> Agent:
     )
 
 
-
-
-
 def create_marketing_agent() -> Agent:
     """Marketing: growth-focused, creates campaigns and copy to drive traffic."""
     return Agent(
@@ -100,6 +118,22 @@ def create_marketing_agent() -> Agent:
         marketing/ directory and log your reasoning. Your focus is always on driving traffic and engagement.""",
         llm=get_marketing_llm(),
         tools=MARKETING_FILE_TOOLS + WEB_TOOLS,
+        verbose=True,
+        allow_delegation=False,
+    )
+
+
+def create_qa_agent() -> Agent:
+    """QA: Quality assurance, testing, and verification."""
+    return Agent(
+        role="QA",
+        goal="Ensure our products work perfectly. Test the website functionality, check the app's logic, and verify that everything is aligned with the spec.",
+        backstory="""You are a meticulous QA Engineer. You read the backlog for tasks assigned to 'qa',
+        review engineering code and marketing assets, and use web tools to verify live deployments.
+        You report bugs, suggest improvements, and log your testing results. You ensure that for every 
+        feature built, it actually meets the definition of 'done' and is bug-free.""",
+        llm=get_qa_llm(),
+        tools=QA_FILE_TOOLS + WEB_TOOLS,
         verbose=True,
         allow_delegation=False,
     )

@@ -6,6 +6,7 @@ from company.agents import (
     create_ceo_agent,
     create_engineer_agent,
     create_marketing_agent,
+    create_qa_agent,
 )
 
 
@@ -18,12 +19,12 @@ Context from the company state:
 {context}
 
 Your responsibilities:
-1. If there is no active product or the current product needs a new direction: propose a product idea, write a spec (use write_product_spec), set it as active (set_active_product), and add tasks for the Engineer and Marketing (add_task_to_backlog).
-2. If there is an active product: critique the current direction. Read recent logs from Engineer and Marketing. If their work is off-track, add corrective tasks. If it looks good, add follow-up tasks to improve or expand.
+1. If there is no active product or the current product needs a new direction: propose a product idea, write a spec (use write_product_spec), set it as active (set_active_product), and add tasks for the Engineer, Marketing, and QA (add_task_to_backlog).
+2. If there is an active product: critique the current direction. Read recent logs from Engineer, Marketing, and QA. If their work is off-track, add corrective tasks. If it looks good, add follow-up tasks to improve or expand.
 3. Use web_search_and_summarize for market research when validating ideas or understanding competitors.
 4. Always append_to_agent_log(agent='ceo', content=...) to record your decisions and rationale.
 
-Be decisive. Prioritize one clear product at a time. Assign tasks to 'engineer' or 'marketing' with clear titles and descriptions. IMPORTANT: Do NOT call multiple tools in a single turn. Call ONE tool, wait for the observation, then proceed.""",
+Be decisive. Prioritize one clear product at a time. Assign tasks to 'engineer', 'marketing', or 'qa' with clear titles and descriptions. IMPORTANT: Do NOT call multiple tools in a single turn. Call ONE tool, wait for the observation, then proceed.""",
         expected_output="A brief summary of what you decided: product direction, tasks added, and key critique points. Logged to ceo.md.",
         agent=ceo_agent,
         context=[],
@@ -79,10 +80,37 @@ If there are no tasks, still create at least one useful marketing asset (e.g. la
     )
 
 
+def create_qa_task(qa_agent, context: str) -> Task:
+    """QA: verify functionality and report issues."""
+    return Task(
+        description=f"""You are the QA lead. Your goal is to ensure the product works perfectly.
+
+Context from the company state:
+{context}
+
+Your responsibilities:
+1. Check get_tasks_for_agent(assigned_to='qa', status='todo') for tasks.
+2. For each task:
+    a. update_task_status(task_id, 'in_progress')
+    b. Read the product spec to understand requirements.
+    c. Read engineering code and marketing assets using read_engineering_file and read_marketing_file.
+    d. Use web_search_and_summarize to check any live URLs or look for common testing patterns.
+    e. Verify functionality, consistency, and alignment with the spec.
+    f. If everything is correct, update_task_status(task_id, 'done').
+    g. If there are issues, report them by adding new tasks for 'engineer' or 'marketing' (add_task_to_backlog) and then mark the QA task as 'done' but with a log entry explaining the issues.
+3. Append to your log (append_to_agent_log(agent='qa', content=...)) with your testing results and any bugs found.
+
+If there are no tasks, perform a general check of the current product state (code quality, UI copy, basic logic) and report any improvements you find. IMPORTANT: Do NOT call multiple tools in a single turn. Call ONE tool, wait for the observation, then proceed.""",
+        expected_output="A summary of QA checks performed, bugs identified, and tasks added. Logged to qa.md.",
+        agent=qa_agent,
+        context=[],
+    )
+
+
 def create_summary_task(ceo_agent, context: str) -> Task:
     """CEO: Final summary of the cycle's progress."""
     return Task(
-        description=f"""You are the CEO. Review the work done by the Engineers and Marketing in this cycle.
+        description=f"""You are the CEO. Review the work done by the Engineers, Marketing, and QA in this cycle.
         
 Context:
 {context}
@@ -96,11 +124,12 @@ Provide a high-level summary of the achievements in this cycle and what the focu
 
 
 def create_company_crew(context: str) -> Crew:
-    """Create and return a Crew with CEO, two Engineers, and Marketing tasks."""
+    """Create and return a Crew with CEO, two Engineers, Marketing, and QA."""
     ceo = create_ceo_agent()
     engineer1 = create_engineer_agent(name="Engineer 1")
     engineer2 = create_engineer_agent(name="Engineer 2")
     marketing = create_marketing_agent()
+    qa = create_qa_agent()
 
     ideation = create_ideation_task(ceo, context)
     
@@ -114,13 +143,16 @@ def create_company_crew(context: str) -> Crew:
     marketing_task = create_marketing_task(marketing, context)
     marketing_task.async_execution = True
     
+    qa_task = create_qa_task(qa, context)
+    qa_task.async_execution = True
+    
     summary = create_summary_task(ceo, context)
 
     # When async_execution is True, the crew will start these tasks concurrently.
     # We end with a synchronous summary task to synchronize the parallel tasks.
     return Crew(
-        agents=[ceo, engineer1, engineer2, marketing],
-        tasks=[ideation, engineering1, engineering2, marketing_task, summary],
+        agents=[ceo, engineer1, engineer2, marketing, qa],
+        tasks=[ideation, engineering1, engineering2, marketing_task, qa_task, summary],
         process=Process.sequential,
         verbose=True,
     )
