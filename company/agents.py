@@ -15,6 +15,7 @@ from company.file_tools import (
     write_marketing_file,
     write_product_spec,
 )
+from company.git_tools import git_push_to_remote, git_set_remote
 from company.llm_config import get_ceo_llm, get_engineer_llm, get_marketing_llm
 from company.web_tools import web_search_and_summarize
 
@@ -36,6 +37,8 @@ ENGINEER_FILE_TOOLS = [
     write_engineering_file,
     append_to_agent_log,
     read_recent_logs,
+    git_push_to_remote, # Engineer can push
+    git_set_remote,    # Engineer can set remote
 ]
 MARKETING_FILE_TOOLS = [
     read_backlog,
@@ -43,6 +46,7 @@ MARKETING_FILE_TOOLS = [
     write_marketing_file,
     append_to_agent_log,
     read_recent_logs,
+    git_push_to_remote, # Marketing can push (for landing pages)
 ]
 
 # Web research for CEO and Marketing
