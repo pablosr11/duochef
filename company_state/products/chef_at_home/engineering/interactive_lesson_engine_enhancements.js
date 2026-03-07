@@ -1,32 +1,37 @@
-// Enhancements to the Interactive Lesson Engine
+// Enhancements to the Interactive Lesson Engine based on user feedback
 
 class InteractiveLessonEngine {
     constructor() {
-        this.currentLesson = null;
-        this.userProgress = {};
+        this.lessons = [];
+        this.currentLessonIndex = 0;
     }
 
-    startLesson(lesson) {
-        this.currentLesson = lesson;
-        this.displayLesson();
+    addLesson(lesson) {
+        this.lessons.push(lesson);
     }
 
-    displayLesson() {
-        // Logic to display the lesson step-by-step
-        console.log(`Starting lesson: ${this.currentLesson.title}`);
-        // Additional UI logic and integrated timers
+    startLesson() {
+        if (this.lessons.length > 0) {
+            this.displayLesson(this.lessons[this.currentLessonIndex]);
+        }
     }
 
-    checkUserInput(input) {
-        // Logic to check user input against expected answers
-        // Provide feedback and error recovery options
+    displayLesson(lesson) {
+        console.log(`Starting lesson: ${lesson.title}`);
+        // Additional logic to display lesson content
     }
 
-    saveProgress() {
-        // Logic to save user progress (XP, streaks, unlocked levels)
+    nextLesson() {
+        this.currentLessonIndex++;
+        if (this.currentLessonIndex < this.lessons.length) {
+            this.displayLesson(this.lessons[this.currentLessonIndex]);
+        } else {
+            console.log('All lessons completed!');
+        }
     }
 }
 
 // Example usage
 const lessonEngine = new InteractiveLessonEngine();
-lessonEngine.startLesson({ title: 'Basic Knife Skills' });
+lessonEngine.addLesson({ title: 'Boiling Water', content: '...' });
+lessonEngine.startLesson();
