@@ -15,15 +15,12 @@ document.getElementById('waitlist-form').addEventListener('submit', async functi
     const submitBtn = document.getElementById('submit-btn');
     const responseMsg = document.getElementById('response-msg');
 
-    // UI state
     submitBtn.disabled = true;
     submitBtn.innerText = 'Joining...';
     responseMsg.style.display = 'none';
 
     try {
-        // NOTE: This endpoint works with the local server.py
-        // For production GitHub Pages, you'll need to use a service like Formspree, 
-        // a Cloudflare Worker, or a Google Form redirect.
+        // Try local backend first (for local testing)
         const response = await fetch('/waitlist', {
             method: 'POST',
             headers: {
@@ -35,24 +32,48 @@ document.getElementById('waitlist-form').addEventListener('submit', async functi
         const data = await response.json();
 
         if (data.status === 'success') {
-            responseMsg.classList.add('success');
-            responseMsg.style.color = 'var(--secondary-color)';
-            responseMsg.innerText = "Welcome to the chef's table! We've added you to the waitlist.";
-            document.getElementById('waitlist-form').reset();
-        } else {
-            throw new Error('Server returned an error');
+            onSuccess();
+            return;
         }
     } catch (error) {
-        console.error('Error submitting waitlist:', error);
+        console.log('Local backend not found, trying Formspree fallback...');
 
-        // Friendly fallback for static environments like GitHub Pages
-        responseMsg.classList.add('error');
-        responseMsg.style.color = '#ff4b2b';
-        responseMsg.innerText = "Heads up! The waitlist is currently only accepting signups via our local testing environment. We'll be live for the public very soon!";
+        // FORMSPREE FALLBACK ($0 solution for static sites)
+        // This allows the waitlist to work on GitHub Pages without a backend.
+        try {
+            const formResponse = await fetch('https://formspree.io/f/xzbnrven', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    _subject: "ChefAtHome Waitlist Signup",
+                    message: "New user joined the waitlist via GitHub Pages."
+                }),
+            });
 
-        // DEBUG: If you see this on GitHub Pages, it's because there's no backend at /waitlist
-    } finally {
+            if (formResponse.ok) {
+                onSuccess();
+                return;
+            }
+        } catch (fError) {
+            console.error('Formspree failed:', fError);
+        }
+    }
+
+    // If both fail
+    responseMsg.style.color = '#ff4b2b';
+    responseMsg.innerText = "Heads up! We're putting the finishing touches on our signup form. Please try again in 5 minutes!";
+    responseMsg.style.display = 'block';
+    submitBtn.disabled = false;
+    submitBtn.innerText = 'Join the Waitlist';
+
+    function onSuccess() {
+        responseMsg.style.color = 'var(--secondary-color)';
+        responseMsg.innerText = "Welcome to the chef's table! We've added you to the waitlist.";
         responseMsg.style.display = 'block';
+        document.getElementById('waitlist-form').reset();
         submitBtn.disabled = false;
         submitBtn.innerText = 'Join the Waitlist';
     }
