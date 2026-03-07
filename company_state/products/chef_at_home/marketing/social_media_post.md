@@ -1,19 +1,9 @@
-🌟 Ready to become a home cooking pro? Join the ChefAtHome waitlist today! 🌟
+🚀 Exciting News for Aspiring Home Chefs! 🎉
 
-ChefAtHome is your personal cooking coach, offering short, interactive lessons that fit your busy lifestyle. Learn essential cooking skills, track your progress, and gain confidence in the kitchen!
+ChefAtHome is here to transform the way you learn cooking! Our app offers interactive lessons that fit into your busy life, focusing on practical skills and kitchen safety.
 
-👩‍🍳 **What to Expect:**
-- Interactive Cooking Lessons
-- Gamified Learning Experience
-- Focus on Kitchen Safety
-- Skill-Building Progression
+👩‍🍳 Start as a complete beginner and progress to cooking core dishes with confidence!
 
-Don't miss out – be the first to know when we launch!
-👉 [Join the Waitlist Now](#)
+Join our waitlist today and be the first to experience the future of cooking education! 🍽️✨
 
-Follow us for cooking tips, recipes, and updates:
-- [Instagram](#)
-- [Facebook](#)
-- [Twitter](#)
-
-#ChefAtHome #CookingSkills #JoinTheWaitlist
+🔗 [Link to Landing Page]

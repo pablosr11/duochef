@@ -200,6 +200,29 @@ def write_marketing_file(slug: str, filename: str, content: str) -> Path:
     return path
 
 
+def read_engineering_file(slug: str, filename: str) -> str | None:
+    """Read a file from the product's engineering/ directory."""
+    base = product_engineering_dir(slug)
+    path = base / filename
+    if not path.exists():
+        # Also check if it's in a subdirectory like 'lessons/'
+        # This is a bit of a hack but helpful for the current structure
+        for sub in base.iterdir():
+            if sub.is_dir() and (sub / filename).exists():
+                return (sub / filename).read_text(encoding="utf-8")
+        return None
+    return path.read_text(encoding="utf-8")
+
+
+def read_marketing_file(slug: str, filename: str) -> str | None:
+    """Read a file from the product's marketing/ directory."""
+    base = product_marketing_dir(slug)
+    path = base / filename
+    if not path.exists():
+        return None
+    return path.read_text(encoding="utf-8")
+
+
 def build_context_summary() -> str:
     """Build a shared context string for the crew (recent logs, active product, backlog)."""
     parts = []

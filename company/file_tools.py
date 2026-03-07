@@ -92,9 +92,29 @@ def read_recent_logs(agent: str, max_entries: int = 5) -> str:
     return state_io.read_log(log_name, max_entries=max_entries) or "No logs yet."
 
 
+@tool("Read engineering file")
+def read_engineering_file(product_slug: str, filename: str) -> str:
+    """Read a code or test file from the product's engineering/ directory."""
+    try:
+        content = state_io.read_engineering_file(product_slug, filename)
+        return content or f"File {filename} is empty."
+    except Exception as e:
+        return f"Error reading {filename}: {str(e)}"
+
+
+@tool("Read marketing file")
+def read_marketing_file(product_slug: str, filename: str) -> str:
+    """Read a marketing asset from the product's marketing/ directory."""
+    try:
+        content = state_io.read_marketing_file(product_slug, filename)
+        return content or f"File {filename} is empty."
+    except Exception as e:
+        return f"Error reading {filename}: {str(e)}"
+
+
 @tool("Get tasks for agent")
 def get_tasks_for_agent(assigned_to: str, status: str | None = None) -> str:
-    """Get tasks assigned to engineer or marketing, optionally filtered by status."""
+    """Get tasks assigned to engineer, marketing, or qa, optionally filtered by status."""
     tasks = state_io.get_tasks_for(assigned_to, status)
     if not tasks:
         return f"No tasks for {assigned_to}" + (f" with status {status}" if status else "")
