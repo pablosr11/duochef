@@ -16,12 +16,14 @@ class UserFeedback {
     }
 
     displayFeedback() {
-        // Logic to display feedback to users
-        console.log('User Feedback:', this.feedbackList);
+        // Logic to display feedback to the user
+        return this.feedbackList;
     }
 }
 
+const feedbackSystem = new UserFeedback();
+
 // Example usage
-const userFeedback = new UserFeedback();
-userFeedback.collectFeedback('Great lesson on boiling water!');
-userFeedback.displayFeedback();
+feedbackSystem.collectFeedback('This lesson was very helpful!');
+feedbackSystem.collectFeedback('I would like more recipes.');
+console.log(feedbackSystem.displayFeedback());

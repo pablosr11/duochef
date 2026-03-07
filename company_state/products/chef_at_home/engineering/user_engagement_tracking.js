@@ -2,23 +2,13 @@
 
 class UserEngagementTracker {
     constructor() {
-        this.engagementData = {
-            dailyActiveUsers: 0,
-            lessonCompletionRate: 0,
-            userFeedback: []
-        };
+        this.engagementData = [];
     }
 
-    trackDailyActiveUsers() {
-        this.engagementData.dailyActiveUsers++;
-    }
-
-    trackLessonCompletion(completedLessons) {
-        this.engagementData.lessonCompletionRate = (completedLessons / totalLessons) * 100;
-    }
-
-    collectUserFeedback(feedback) {
-        this.engagementData.userFeedback.push(feedback);
+    trackEngagement(userId, lessonId, action) {
+        const engagement = { userId, lessonId, action, timestamp: new Date() };
+        this.engagementData.push(engagement);
+        console.log('Engagement tracked:', engagement);
     }
 
     getEngagementData() {
@@ -26,9 +16,4 @@ class UserEngagementTracker {
     }
 }
 
-// Example usage
-const tracker = new UserEngagementTracker();
-tracker.trackDailyActiveUsers();
-tracker.trackLessonCompletion(1);
-tracker.collectUserFeedback('Great lesson!');
-console.log(tracker.getEngagementData());
+module.exports = UserEngagementTracker;

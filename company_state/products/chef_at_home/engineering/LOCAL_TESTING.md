@@ -1,20 +1,19 @@
 # Local Testing Instructions for ChefAtHome
 
-## Setup
-1. Clone the repository.
-2. Install dependencies using `npm install`.
-3. Ensure you have the latest version of Node.js installed.
+## Prerequisites
+- Node.js installed
+- Access to the local database or JSON file for waitlist persistence
 
 ## Running the App
-- To start the application, run `npm start`.
-- The app will be available at `http://localhost:3000`.
+1. Clone the repository.
+2. Navigate to the project directory.
+3. Run `npm install` to install dependencies.
+4. Start the application with `npm start`.
 
-## Testing the Waitlist Feature
-1. Navigate to the waitlist page.
-2. Enter a valid email address and submit.
-3. Check the local JSON file to ensure the email is saved correctly.
+## Testing the Interactive Engine
+- To test the interactive engine, ensure that the lesson files are correctly placed in the `engineering/` directory.
+- Use the command `npm test` to run all tests.
 
-## Testing the Interactive Lesson Engine
-1. Start the application and navigate to the lesson section.
-2. Select a lesson and ensure it displays correctly.
-3. Track user progress and ensure it updates in local storage.
+## Waitlist Persistence
+- Ensure that the waitlist email collection feature is functional in the local environment, writing to a local JSON file or simple database.
+- Test the waitlist submission by filling out the form and checking the local storage.

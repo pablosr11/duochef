@@ -8,20 +8,25 @@ class InteractiveEngine {
 
     startLesson(lesson) {
         this.currentLesson = lesson;
-        this.displayLesson();
+        this.showStep(0);
     }
 
-    displayLesson() {
-        // Logic to display lesson content
+    showStep(stepIndex) {
+        // Logic to display the current step of the lesson
+        console.log(`Showing step ${stepIndex} of lesson ${this.currentLesson.title}`);
     }
 
-    checkUserInput(input) {
-        // Logic to check user input
+    completeStep() {
+        // Logic to mark the current step as complete
+        console.log(`Completed step of lesson ${this.currentLesson.title}`);
     }
 
     saveProgress() {
         // Logic to save user progress
+        console.log('User progress saved.');
     }
 }
 
+// Example usage
 const engine = new InteractiveEngine();
+engine.startLesson({ title: 'Boiling Water' });
