@@ -216,8 +216,12 @@ def build_context_summary() -> str:
         parts.append("Backlog (todo/in_progress):")
         for t in todo[:15]:
             parts.append(f"  - [{t['id']}] {t['title']} (-> {t['assigned_to']}, {t['status']})")
-    for agent in ("ceo", "engineer", "marketing"):
-        log = read_log(agent, max_entries=3)
+    log_files = list(LOGS_PATH.glob("*.md"))
+    for log_path in log_files:
+        agent_name = log_path.stem
+        if agent_name == ".gitkeep":
+            continue
+        log = read_log(agent_name, max_entries=3)
         if log:
-            parts.append(f"Recent {agent} log:\n{log[:800]}{'...' if len(log) > 800 else ''}")
+            parts.append(f"Recent {agent_name} log:\n{log[:800]}{'...' if len(log) > 800 else ''}")
     return "\n\n".join(parts)

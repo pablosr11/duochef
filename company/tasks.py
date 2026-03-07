@@ -49,10 +49,10 @@ Your responsibilities:
     d. update_task_status(task_id, 'done')
 4. IMPORTANT: Do NOT try to output multiple files or status updates in a single turn. Call ONE tool, wait for the observation, then call the next tool.
 5. Write clean, tested code. Prefer small, focused files.
-6. Append to your log (append_to_agent_log(agent='engineer', content=...)) AFTER you finish each task or if you get blocked.
+6. Append to your log (append_to_agent_log(agent='{name}', content=...)) AFTER you finish each task or if you get blocked.
 
 If there are no tasks, summarize that and suggest what the CEO might add. Still log your check.""",
-        expected_output=f"A summary of tasks completed by {name}. Code written to company_state/products/<slug>/engineering/. Logged to engineer.md.",
+        expected_output=f"A summary of tasks completed by {name}. Code written to company_state/products/<slug>/engineering/. Logged to {name.lower().replace(' ', '_')}.md.",
         agent=engineer_agent,
         context=[],
     )

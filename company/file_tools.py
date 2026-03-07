@@ -78,19 +78,18 @@ def write_marketing_file(product_slug: str, filename: str, content: str) -> str:
 
 @tool("Append to agent log")
 def append_to_agent_log(agent: str, content: str) -> str:
-    """Append an entry to an agent's log. agent: ceo, engineer, or marketing."""
-    if agent not in ("ceo", "engineer", "marketing"):
-        return f"agent must be ceo, engineer, or marketing, got '{agent}'"
-    state_io.append_log(agent, content)
-    return f"Logged to {agent}.md"
+    """Append an entry to an agent's log. agent: ceo, marketing, or an engineer identifier like engineer_1."""
+    # Sanitize name: lowercase and replace spaces with underscores
+    log_name = agent.lower().replace(" ", "_")
+    state_io.append_log(log_name, content)
+    return f"Logged to {log_name}.md"
 
 
 @tool("Read recent logs")
 def read_recent_logs(agent: str, max_entries: int = 5) -> str:
-    """Read recent log entries for an agent."""
-    if agent not in ("ceo", "engineer", "marketing"):
-        return f"agent must be ceo, engineer, or marketing, got '{agent}'"
-    return state_io.read_log(agent, max_entries=max_entries) or "No logs yet."
+    """Read recent log entries for an agent. agent: identifier like ceo, marketing, or engineer_1."""
+    log_name = agent.lower().replace(" ", "_")
+    return state_io.read_log(log_name, max_entries=max_entries) or "No logs yet."
 
 
 @tool("Get tasks for agent")

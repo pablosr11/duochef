@@ -41,6 +41,7 @@ def get_openrouter_llm(
         api_key=api_key,
         temperature=temperature,
         max_tokens=max_tokens,
+        num_retries=3,
     )
 
 

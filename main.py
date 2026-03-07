@@ -24,14 +24,22 @@ def _parse_fallback_models(raw: str | None) -> list[str]:
 
 
 def _should_try_next_model(exc: Exception) -> bool:
-    msg = f"{exc}"
+    msg = str(exc).lower()
     retry_markers = [
-        "No endpoints found",
-        "NotFoundError",
-        "RateLimitError",
+        "no endpoints found",
+        "notfounderror",
+        "ratelimiterror",
         "429",
-        "OpenRouterException",
+        "500",
+        "502",
+        "503",
+        "504",
+        "openrouterexception",
         "temporarily rate-limited",
+        "invalid response from llm",
+        "none or empty",
+        "internal server error",
+        "api error",
     ]
     return any(m in msg for m in retry_markers)
 
@@ -94,7 +102,9 @@ def run_cycle(cycle_num: int) -> None:
         except Exception as e:
             if idx < len(model_candidates) - 1 and _should_try_next_model(e):
                 next_model = model_candidates[idx + 1]
-                print(f"Model failed: {model!r}. Retrying with fallback: {next_model!r}.")
+                print(f"Model failed: {model!r}. Error: {e}")
+                print(f"Retrying with fallback in 10s: {next_model!r}.")
+                time.sleep(10)
                 continue
             raise
 
