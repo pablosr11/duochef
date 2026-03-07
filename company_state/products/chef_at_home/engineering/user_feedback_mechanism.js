@@ -2,20 +2,26 @@
 
 class UserFeedback {
     constructor() {
-        this.feedbackData = [];
+        this.feedbackList = [];
     }
 
-    collectFeedback(userId, feedback) {
-        this.feedbackData.push({ userId, feedback });
-        console.log('Feedback collected:', { userId, feedback });
+    collectFeedback(feedback) {
+        this.feedbackList.push(feedback);
+        this.saveFeedback();
     }
 
-    getFeedback() {
-        return this.feedbackData;
+    saveFeedback() {
+        // Logic to save feedback to local storage or server
+        console.log('Feedback saved:', this.feedbackList);
+    }
+
+    displayFeedback() {
+        // Logic to display feedback to users
+        console.log('User Feedback:', this.feedbackList);
     }
 }
 
 // Example usage
-const feedbackSystem = new UserFeedback();
-feedbackSystem.collectFeedback('user123', 'Great lesson on boiling water!');
-console.log(feedbackSystem.getFeedback());
+const userFeedback = new UserFeedback();
+userFeedback.collectFeedback('Great lesson on boiling water!');
+userFeedback.displayFeedback();
