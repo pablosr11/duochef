@@ -1,50 +1,32 @@
 // Interactive Engine Features Implementation
 
-class InteractiveEngine {
+class InteractiveLessonEngine {
     constructor() {
-        this.lessons = [];
-        this.currentLesson = null;
+        this.timers = {};
+        this.progressTracking = {};
     }
 
-    addLesson(lesson) {
-        this.lessons.push(lesson);
+    startTimer(lessonId) {
+        this.timers[lessonId] = Date.now();
     }
 
-    startLesson(lessonId) {
-        this.currentLesson = this.lessons.find(lesson => lesson.id === lessonId);
-        if (this.currentLesson) {
-            this.currentLesson.start();
+    endTimer(lessonId) {
+        const duration = Date.now() - this.timers[lessonId];
+        console.log(`Lesson ${lessonId} completed in ${duration} ms`);
+    }
+
+    trackProgress(userId, lessonId) {
+        if (!this.progressTracking[userId]) {
+            this.progressTracking[userId] = [];
         }
-    }
-
-    completeLesson() {
-        if (this.currentLesson) {
-            this.currentLesson.complete();
-            this.currentLesson = null;
-        }
+        this.progressTracking[userId].push(lessonId);
     }
 }
 
-// Example Lesson Class
-class Lesson {
-    constructor(id, title) {
-        this.id = id;
-        this.title = title;
-        this.completed = false;
-    }
-
-    start() {
-        console.log(`Starting lesson: ${this.title}`);
-    }
-
-    complete() {
-        this.completed = true;
-        console.log(`Completed lesson: ${this.title}`);
-    }
-}
+const lessonEngine = new InteractiveLessonEngine();
 
 // Example usage
-const engine = new InteractiveEngine();
-const lesson1 = new Lesson(1, 'Boiling Water');
-engine.addLesson(lesson1);
-engine.startLesson(1);
+lessonEngine.startTimer('lesson1');
+// After lesson completion
+lessonEngine.endTimer('lesson1');
+lessonEngine.trackProgress('user1', 'lesson1');
