@@ -1,21 +1,23 @@
-# ChefAtHome: Your Cooking Journey Starts Here!
+# Welcome to ChefAtHome: Your Personal Cooking Coach
 
-## Unlock Your Culinary Potential with Short, Interactive Lessons!
-
-Are you a complete beginner who feels intimidated by recipes? Do you have just 5-10 minutes to spare for learning? Welcome to ChefAtHome – the app that transforms cooking into a fun and engaging experience, just like Duolingo does for languages!
+## Learn to Cook with Confidence!
+Are you a complete beginner in the kitchen? Do you feel intimidated by recipes and cooking techniques? ChefAtHome is here to help you learn practical cooking skills at home, just like Duolingo teaches languages!
 
 ### Why Choose ChefAtHome?
+- **Short & Engaging Lessons**: Our interactive lessons are designed for busy adults. Spend just 5-10 minutes a day learning essential cooking skills.
+- **Safe Cooking Practices**: Kitchen and food safety are our top priorities. Gain confidence while cooking safely!
+- **Skill-Building Progression**: Start from boiling water and progress to mastering core dishes. Unlock new skills and recipes as you advance.
+- **Gamified Experience**: Track your progress with our unique skill tree navigation, and enjoy the journey of becoming a confident home cook.
 
-- **Learn at Your Own Pace**: Our interactive lessons are designed for busy adults. With bite-sized lessons, you can learn cooking skills anytime, anywhere!
+### Join the Waitlist Today!
+Don’t miss out on the opportunity to transform your cooking skills. Sign up for our waitlist and be the first to know when we launch!
 
-- **Safety First**: We prioritize your safety in the kitchen. Our lessons include essential kitchen safety and food safety milestones to ensure you cook confidently and safely.
+[Join the Waitlist Now](#)
 
-- **Build Transferable Skills**: Master foundational techniques like boiling, sautéing, and seasoning before tackling complex recipes. With our skill-building approach, you'll gain the confidence to create delicious meals!
+### Follow Us on Social Media
+Stay updated with cooking tips, recipes, and more!
+- [Facebook](#)
+- [Instagram](#)
+- [Twitter](#)
 
-- **Gamified Experience**: Experience a unique learning journey with our visual skill tree navigation. Unlock new levels as you demonstrate your cooking skills and earn rewards for your progress!
-
-- **Join the Waitlist Today!**: Be the first to know when ChefAtHome launches! Sign up for our waitlist and get exclusive updates and tips to start your cooking journey.
-
-### Ready to Cook with Confidence?
-
-Join the ChefAtHome community and unlock your potential in the kitchen! Sign up for our waitlist now and take the first step towards becoming a confident home cook.
+Let’s make cooking fun and accessible for everyone!
