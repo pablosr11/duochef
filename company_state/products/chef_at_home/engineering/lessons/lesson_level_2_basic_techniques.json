@@ -1,0 +1,34 @@
+{
+  "lesson_title": "Level 2: Basic Techniques",
+  "objectives": [
+    "Learn to sauté vegetables",
+    "Understand how to properly season food",
+    "Practice knife skills with different cuts"
+  ],
+  "steps": [
+    {
+      "step_number": 1,
+      "instruction": "Gather all necessary ingredients and tools."
+    },
+    {
+      "step_number": 2,
+      "instruction": "Heat oil in a pan over medium heat."
+    },
+    {
+      "step_number": 3,
+      "instruction": "Add chopped vegetables and sauté until tender."
+    },
+    {
+      "step_number": 4,
+      "instruction": "Season with salt and pepper to taste."
+    },
+    {
+      "step_number": 5,
+      "instruction": "Serve and enjoy your sautéed vegetables!"
+    }
+  ],
+  "safety_tips": [
+    "Always use a cutting board when chopping ingredients.",
+    "Be careful with sharp knives and hot surfaces."
+  ]
+}

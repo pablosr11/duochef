@@ -1,0 +1,16 @@
+{
+  "lesson_title": "Boiling Water with Safety Tips",
+  "steps": [
+    { "instruction": "Gather your materials: pot, water, and stove." },
+    { "instruction": "Fill the pot with water, ensuring not to overfill." },
+    { "instruction": "Place the pot on the stove and turn on the heat to high." },
+    { "instruction": "While waiting for the water to boil, ensure you are standing safely away from the stove." },
+    { "instruction": "Once the water reaches a rolling boil, carefully add your ingredients (if applicable)." },
+    { "instruction": "Turn off the stove after use and allow the pot to cool before handling." }
+  ],
+  "safety_tips": [
+    "Always use oven mitts when handling hot pots.",
+    "Keep flammable materials away from the stove.",
+    "Never leave boiling water unattended."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "lesson_title": "Level 3 Basic Skills",
+  "skills": [
+    {
+      "skill_name": "Sautéing",
+      "description": "Learn how to sauté vegetables and proteins to enhance flavors.",
+      "steps": [
+        "Choose your ingredients.",
+        "Heat oil in a pan.",
+        "Add ingredients and stir frequently."
+      ]
+    },
+    {
+      "skill_name": "Baking",
+      "description": "Introduction to baking basics, including measuring and mixing ingredients.",
+      "steps": [
+        "Preheat the oven.",
+        "Measure ingredients accurately.",
+        "Mix and prepare for baking."
+      ]
+    }
+  ],
+  "safety_tips": [
+    "Always use oven mitts when handling hot pans.",
+    "Be cautious of splattering oil when sautéing."
+  ]
+}

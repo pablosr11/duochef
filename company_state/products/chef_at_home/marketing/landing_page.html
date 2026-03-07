@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChefAtHome - Your Journey to Cooking Confidence</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .container { padding: 20px; text-align: center; }
+        h1 { color: #4CAF50; }
+        p { font-size: 18px; }
+        .button { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        .button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to ChefAtHome!</h1>
+        <p>Your Journey to Cooking Confidence Starts Here!</p>
+        <p>Are you a complete beginner in the kitchen? Do you feel intimidated by complex recipes? ChefAtHome is designed for you! Our innovative app helps you learn practical cooking skills in short, engaging lessons that fit into your busy life.</p>
+        <h2>Why ChefAtHome?</h2>
+        <ul>
+            <li><strong>Interactive Lessons:</strong> Our step-by-step lessons guide you through essential cooking techniques, from boiling water to mastering core dishes like pasta, eggs, and roasted veggies.</li>
+            <li><strong>Gamified Experience:</strong> Track your progress with our skill tree navigation, unlock new levels, and celebrate your small wins with streaks and milestones.</li>
+            <li><strong>Safety First:</strong> We prioritize kitchen and food safety, providing you with the knowledge you need to cook confidently and safely.</li>
+            <li><strong>Learn at Your Own Pace:</strong> With lessons that take just 5-10 minutes, you can easily fit cooking into your daily routine.</li>
+        </ul>
+        <div id="waitlist-section">
+            <h2>Join Our Waitlist!</h2>
+            <p>Be among the first to experience ChefAtHome. Sign up now to receive exclusive updates and early access to our app!</p>
+            <form id="waitlist-form">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required style="padding: 10px; border: 1px solid #ccc; width: 250px;">
+                <button type="submit" class="button">Submit</button>
+            </form>
+            <p id="response-msg" style="display: none; color: #4CAF50; font-weight: bold; margin-top: 10px;"></p>
+        </div>
+
+        <script>
+            document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const responseMsg = document.getElementById('response-msg');
+                
+                try {
+                    const response = await fetch('/waitlist', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ email: email }),
+                    });
+                    
+                    const data = await response.json();
+                    if (data.status === 'success') {
+                        responseMsg.textContent = "Welcome to the chef's table! We've added you to the waitlist.";
+                        responseMsg.style.display = 'block';
+                        document.getElementById('waitlist-form').reset();
+                    }
+                } catch (error) {
+                    console.error('Error submitting waitlist:', error);
+                    alert("Something went wrong. Let's try that again!");
+                }
+            });
+        </script>
+        <p>What Our Users Say:</p>
+        <blockquote>"I never thought I could cook! ChefAtHome made it fun and easy." - Sarah, beginner cook.</blockquote>
+    </div>
+</body>
+</html>

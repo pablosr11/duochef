@@ -1,0 +1,13 @@
+{
+  "lesson_id": "eggs_scrambled_l2",
+  "title": "Fluffy Scrambled Eggs",
+  "level": 2,
+  "steps": [
+    {
+      "step_id": 1,
+      "description": "Crack 2-3 eggs into a bowl.",
+      "type": "instruction"
+    },
+    {
+      "step_id": 2,
+      "description":

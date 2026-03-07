@@ -1,0 +1,26 @@
+{
+  "title": "Beginner Cooking Skills",
+  "description": "This lesson covers essential cooking skills for beginners, including knife skills, boiling water, and kitchen safety.",
+  "steps": [
+    {
+      "instruction": "Gather your kitchen tools and ingredients.",
+      "duration": "2 minutes"
+    },
+    {
+      "instruction": "Learn how to safely handle a knife.",
+      "duration": "5 minutes"
+    },
+    {
+      "instruction": "Practice boiling water and understand the process.",
+      "duration": "5 minutes"
+    },
+    {
+      "instruction": "Review kitchen safety tips.",
+      "duration": "3 minutes"
+    }
+  ],
+  "milestones": [
+    "Successfully demonstrate knife skills.",
+    "Boil water without supervision."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "features": {
+    "feedbackMechanism": true,
+    "userFriendlyNavigation": true,
+    "stepByStepGuidance": true,
+    "integratedTimers": true,
+    "gotItChecks": true
+  },
+  "description": "Enhancements to improve user experience in the interactive lesson engine."
+}

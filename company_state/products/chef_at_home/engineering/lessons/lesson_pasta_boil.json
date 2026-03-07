@@ -1,0 +1,83 @@
+{
+  "lesson_id": "pasta_boil",
+  "title": "Boiling Perfect Pasta",
+  "level": 2,
+  "steps": [
+    {
+      "step_id": "fill_pot",
+      "description": "Fill a large pot with plenty of water (about 4-6 quarts per pound of pasta).",
+      "type": "action",
+      "details": {
+        "action_type": "fill_pot",
+        "item": "water",
+        "quantity": "large amount",
+        "pot_size": "large"
+      }
+    },
+    {
+      "step_id": "add_salt",
+      "description": "Add a generous amount of salt to the water. It should taste like the sea!",
+      "type": "action",
+      "details": {
+        "action_type": "add_salt",
+        "quantity": "generous"
+      }
+    },
+    {
+      "step_id": "bring_to_boil_pasta",
+      "description": "Bring the salted water to a rolling boil over high heat.",
+      "type": "action",
+      "details": {
+        "action_type": "boil",
+        "heat": "high"
+      }
+    },
+    {
+      "step_id": "add_pasta",
+      "description": "Add your pasta to the boiling water and stir immediately to prevent sticking.",
+      "type": "action",
+      "details": {
+        "action_type": "add_pasta",
+        "stir_immediately": true
+      }
+    },
+    {
+      "step_id": "cook_pasta",
+      "description": "Cook according to package directions, stirring occasionally, until al dente (tender but still firm to the bite).",
+      "type": "timer",
+      "details": {
+        "cook_time_from_package": true,
+        "al_dente": true,
+        "stir_occasionally": true
+      }
+    },
+    {
+      "step_id": "reserve_water",
+      "description": "Before draining, reserve about 1 cup of the starchy pasta water.",
+      "type": "action",
+      "details": {
+        "action_type": "reserve_water",
+        "quantity": "1 cup"
+      }
+    },
+    {
+      "step_id": "drain_pasta",
+      "description": "Drain the pasta in a colander. Do not rinse.",
+      "type": "action",
+      "details": {
+        "action_type": "drain",
+        "item": "pasta",
+        "rinse": false
+      }
+    },
+    {
+      "step_id": "combine_with_sauce",
+      "description": "Return the pasta to the pot and toss with your sauce. Use some of the reserved pasta water to help the sauce emulsify and coat the pasta.",
+      "type": "action",
+      "details": {
+        "action_type": "combine_with_sauce",
+        "use_reserved_water": true
+      }
+    }
+  ]
+}

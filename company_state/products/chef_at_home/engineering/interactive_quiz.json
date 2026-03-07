@@ -1,0 +1,35 @@
+{
+  "quizTitle": "Cooking Skills Quiz",
+  "questions": [
+    {
+      "question": "What is the first step in boiling water?",
+      "options": [
+        "Put the pot on the stove",
+        "Add salt",
+        "Turn on the heat",
+        "Wait for the water to boil"
+      ],
+      "correctAnswer": "Put the pot on the stove"
+    },
+    {
+      "question": "Which knife is best for chopping vegetables?",
+      "options": [
+        "Chef's knife",
+        "Paring knife",
+        "Bread knife",
+        "Butter knife"
+      ],
+      "correctAnswer": "Chef's knife"
+    },
+    {
+      "question": "What should you do before handling food?",
+      "options": [
+        "Wash your hands",
+        "Put on an apron",
+        "Gather ingredients",
+        "Preheat the oven"
+      ],
+      "correctAnswer": "Wash your hands"
+    }
+  ]
+}

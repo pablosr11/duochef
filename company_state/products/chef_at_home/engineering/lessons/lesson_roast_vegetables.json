@@ -1,0 +1,43 @@
+{
+  "id": "roast_vegetables",
+  "title": "Roast Vegetables",
+  "steps": [
+    {
+      "instruction": "Preheat your oven to a high temperature, typically 400-425°F (200-220°C). A hot oven is key for browning.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Prepare your vegetables: Wash and chop your chosen vegetables (e.g., broccoli, carrots, bell peppers, onions) into roughly uniform, bite-sized pieces. This ensures even cooking.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Toss with oil and seasoning: Place the chopped vegetables in a large bowl. Drizzle with olive oil (enough to lightly coat each piece) and season generously with salt and pepper. You can also add other herbs or spices like garlic powder, paprika, or rosemary.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Arrange on baking sheet: Spread the seasoned vegetables in a single layer on a baking sheet. Do not overcrowd the pan; give the vegetables space. Overcrowding will cause them to steam instead of roast, preventing good browning.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Roast until tender and browned: Place the baking sheet in the preheated oven. Roast for 20-35 minutes, depending on the vegetables and size of the pieces. Flip or stir the vegetables halfway through for even browning.",
+      "timer": {
+        "duration": 25,
+        "unit": "minutes"
+      },
+      "check": "Are the vegetables tender when pierced with a fork and nicely browned on the edges?"
+    },
+    {
+      "instruction": "Serve hot. Roasted vegetables are a versatile side dish.",
+      "timer": null,
+      "check": null
+    }
+  ],
+  "skill_tags": ["vegetables", "roasting", "browning", "oven", "staples"],
+  "unlock_rules": {
+    "prerequisite_milestone": "cook_rice"
+  }
+}

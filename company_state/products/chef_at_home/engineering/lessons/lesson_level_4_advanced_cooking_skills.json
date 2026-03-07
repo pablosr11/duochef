@@ -1,0 +1,27 @@
+{
+  "title": "Advanced Cooking Skills",
+  "level": 4,
+  "lessons": [
+    {
+      "title": "Sous Vide Cooking",
+      "description": "Learn the sous vide technique for perfect cooking results.",
+      "steps": [
+        "Prepare the ingredients.",
+        "Seal in a vacuum bag.",
+        "Set the sous vide machine to the desired temperature.",
+        "Cook for the required time.",
+        "Finish with a sear on a hot pan."
+      ]
+    },
+    {
+      "title": "Fermentation Basics",
+      "description": "Understand the basics of fermentation and how to apply it in cooking.",
+      "steps": [
+        "Choose your ingredients (e.g., vegetables, fruits).",
+        "Prepare a brine solution.",
+        "Submerge the ingredients in the brine.",
+        "Seal and store in a cool, dark place for a few days to weeks."
+      ]
+    }
+  ]
+}

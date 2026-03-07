@@ -1,0 +1,13 @@
+{
+  "lesson_title": "Sautéing Techniques",
+  "description": "Master the art of sautéing to create delicious meals quickly.",
+  "steps": [
+    { "instruction": "Gather your ingredients and equipment: a pan, oil, and vegetables or proteins." },
+    { "instruction": "Heat the pan and add oil until shimmering." },
+    { "instruction": "Add your ingredients and stir frequently to cook evenly." },
+    { "instruction": "Season while cooking for best flavor results." }
+  ],
+  "milestones": [
+    { "milestone": "Sauté a vegetable dish without burning." }
+  ]
+}

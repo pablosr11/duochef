@@ -1,0 +1,27 @@
+{
+  "title": "Advanced Cooking Skills",
+  "description": "This lesson covers advanced techniques such as sous-vide cooking, fermentation, and complex flavor building.",
+  "steps": [
+    {
+      "step_number": 1,
+      "instruction": "Understand the sous-vide technique and its benefits."
+    },
+    {
+      "step_number": 2,
+      "instruction": "Learn how to set up a sous-vide bath."
+    },
+    {
+      "step_number": 3,
+      "instruction": "Practice cooking a steak using sous-vide."
+    },
+    {
+      "step_number": 4,
+      "instruction": "Explore fermentation basics and how to ferment vegetables."
+    },
+    {
+      "step_number": 5,
+      "instruction": "Experiment with flavor building using herbs and spices."
+    }
+  ],
+  "safety_notes": "Always follow food safety guidelines when cooking and handling food."
+}

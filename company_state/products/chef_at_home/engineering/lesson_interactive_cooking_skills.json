@@ -1,0 +1,26 @@
+{
+  "title": "Interactive Cooking Skills",
+  "description": "A lesson focused on practical cooking skills for beginners, including chopping, sautéing, and seasoning.",
+  "steps": [
+    {
+      "step": 1,
+      "instruction": "Gather all necessary ingredients and tools."
+    },
+    {
+      "step": 2,
+      "instruction": "Learn the basic chopping techniques."
+    },
+    {
+      "step": 3,
+      "instruction": "Practice sautéing vegetables."
+    },
+    {
+      "step": 4,
+      "instruction": "Understand how to season your dishes."
+    }
+  ],
+  "safety_notes": [
+    "Always use a cutting board when chopping.",
+    "Be cautious with sharp knives."
+  ]
+}

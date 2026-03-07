@@ -1,0 +1,40 @@
+{
+  "id": "seasoning_loop",
+  "title": "The Basic Seasoning Loop",
+  "steps": [
+    {
+      "instruction": "The seasoning loop is a fundamental concept: Salt, Acid, Fat, Heat. These elements work together to enhance flavor. We'll start with salt.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Salt: Season your food with salt. Salt enhances existing flavors and suppresses bitterness. Taste as you go, but don't be afraid to salt properly.",
+      "timer": null,
+      "check": "Have you added salt to your dish?"
+    },
+    {
+      "instruction": "Heat: Apply heat to your food (e.g., cooking, roasting, sautéing). Heat transforms ingredients and melds flavors.",
+      "timer": null,
+      "check": "Is your food being cooked or heated?"
+    },
+    {
+      "instruction": "Fat: Add a source of fat (e.g., olive oil, butter, rendered fat). Fat carries flavor and adds richness and mouthfeel.",
+      "timer": null,
+      "check": "Have you incorporated fat into your dish?"
+    },
+    {
+      "instruction": "Acid: Finish with an acid (e.g., lemon juice, vinegar). Acid brightens flavors, cuts through richness, and balances the dish. Add it at the end of cooking.",
+      "timer": null,
+      "check": "Have you added an acid to brighten the flavors?"
+    },
+    {
+      "instruction": "Taste and Adjust: Taste your dish. Does it need more salt? More acid? More richness from fat? Adjust as needed, repeating the loop until the flavors are balanced and delicious.",
+      "timer": null,
+      "check": "Taste your final dish. Does it taste balanced and delicious?"
+    }
+  ],
+  "skill_tags": ["seasoning", "flavor", "technique", "salt", "acid", "fat", "heat"],
+  "unlock_rules": {
+    "prerequisite_milestone": "roast_vegetables"
+  }
+}

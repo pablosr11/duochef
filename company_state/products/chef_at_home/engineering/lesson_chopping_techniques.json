@@ -1,0 +1,16 @@
+{
+  "lesson_title": "Chopping Techniques",
+  "description": "Learn the basics of chopping vegetables safely and efficiently.",
+  "steps": [
+    { "instruction": "Gather your ingredients and tools: knife, cutting board, and vegetables." },
+    { "instruction": "Hold the knife correctly with a firm grip." },
+    { "instruction": "Use the claw grip to hold the vegetable while chopping." },
+    { "instruction": "Chop the vegetable into small, even pieces." },
+    { "instruction": "Practice with different vegetables to improve your skills." }
+  ],
+  "safety_tips": [
+    "Always keep your fingers away from the blade.",
+    "Use a stable cutting board to prevent slipping.",
+    "Be cautious when handling sharp knives."
+  ]
+}

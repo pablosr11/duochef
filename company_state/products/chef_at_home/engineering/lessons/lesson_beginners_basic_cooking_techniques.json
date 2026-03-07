@@ -1,0 +1,27 @@
+{
+  "title": "Basic Cooking Techniques",
+  "description": "Learn essential cooking techniques such as sautéing, steaming, and boiling.",
+  "steps": [
+    {
+      "instruction": "To sauté, heat a small amount of oil in a pan over medium heat.",
+      "image": "path/to/image1.jpg"
+    },
+    {
+      "instruction": "Add your ingredients and stir frequently to cook evenly.",
+      "image": "path/to/image2.jpg"
+    },
+    {
+      "instruction": "For steaming, place vegetables in a steamer basket over boiling water and cover until tender.",
+      "image": "path/to/image3.jpg"
+    },
+    {
+      "instruction": "Boiling is done by placing food in water and heating until it cooks through.",
+      "image": "path/to/image4.jpg"
+    }
+  ],
+  "safety_tips": [
+    "Always use a lid when steaming to retain moisture.",
+    "Be cautious of hot oil when sautéing.",
+    "Ensure food is cooked thoroughly before serving."
+  ]
+}

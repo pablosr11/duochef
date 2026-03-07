@@ -1,0 +1,40 @@
+{
+  "id": "pasta_water_emulsify",
+  "title": "Reserve Pasta Water & Emulsify Sauce",
+  "steps": [
+    {
+      "instruction": "You've reserved about 1 cup of the starchy pasta water. This water contains starch that helps to bind oil and water together, creating a smooth, cohesive sauce.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "In a separate pan, prepare your sauce base (e.g., sautéed garlic and olive oil, a simple tomato sauce).",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Add the drained pasta directly to the pan with the sauce.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Add a splash (about 1/4 cup) of the reserved pasta water to the pan. Toss the pasta and sauce vigorously. The starch in the water will help to emulsify the sauce, making it creamy and coating the pasta evenly.",
+      "timer": null,
+      "check": "Does the sauce look creamy and well-coated on the pasta?"
+    },
+    {
+      "instruction": "If the sauce is too thick, add a little more pasta water, a tablespoon at a time, until it reaches your desired consistency.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Continue tossing until the pasta is perfectly coated and the sauce is glossy.",
+      "timer": null,
+      "check": null
+    }
+  ],
+  "skill_tags": ["pasta", "sauce", "emulsify", "technique"],
+  "unlock_rules": {
+    "prerequisite_milestone": "pasta_al_dente"
+  }
+}

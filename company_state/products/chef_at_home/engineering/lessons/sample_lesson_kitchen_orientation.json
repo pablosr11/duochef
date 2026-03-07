@@ -1,0 +1,47 @@
+{
+  "id": "kitchen_orientation_01",
+  "title": "Kitchen Orientation: Basic Tools",
+  "description": "Learn to identify essential kitchen tools and their basic uses.",
+  "steps": [
+    {
+      "step_id": "step1",
+      "instruction": "Identify a pot. Pots are used for cooking liquids or stews.",
+      "timer_seconds": null,
+      "check": {
+        "type": "self_check",
+        "prompt": "Do you have a pot? (Yes/No)"
+      }
+    },
+    {
+      "step_id": "step2",
+      "instruction": "Identify a pan. Pans are typically used for frying or sautéing.",
+      "timer_seconds": null,
+      "check": {
+        "type": "self_check",
+        "prompt": "Do you have a pan? (Yes/No)"
+      }
+    },
+    {
+      "step_id": "step3",
+      "instruction": "Identify a knife. Use caution when handling knives.",
+      "timer_seconds": null,
+      "check": {
+        "type": "self_check",
+        "prompt": "Do you have a knife? (Yes/No)"
+      }
+    },
+    {
+      "step_id": "step4",
+      "instruction": "Identify a cutting board. This protects your counters and provides a stable surface for cutting.",
+      "timer_seconds": null,
+      "check": {
+        "type": "self_check",
+        "prompt": "Do you have a cutting board? (Yes/No)"
+      }
+    }
+  ],
+  "skill_tags": ["kitchen_basics", "tools"],
+  "unlock_rules": {
+    "required_milestones": []
+  }
+}

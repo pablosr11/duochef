@@ -1,0 +1,33 @@
+{
+  "level": 7,
+  "title": "Advanced Cooking Skills",
+  "lessons": [
+    {
+      "title": "Sous Vide Cooking",
+      "description": "Learn the sous vide technique for perfectly cooked meats.",
+      "steps": [
+        "Prepare the sous vide water bath.",
+        "Season the meat and vacuum seal it.",
+        "Cook the meat in the water bath for the desired time.",
+        "Sear the meat for a crispy exterior."
+      ],
+      "safety_tips": [
+        "Ensure the water temperature is safe for cooking.",
+        "Use appropriate vacuum sealing techniques to avoid contamination."
+      ]
+    },
+    {
+      "title": "Fermentation Basics",
+      "description": "Understand the basics of fermentation and how to make your own sauerkraut.",
+      "steps": [
+        "Shred the cabbage and mix with salt.",
+        "Pack the cabbage tightly in a jar and seal it.",
+        "Let it ferment at room temperature for several weeks."
+      ],
+      "safety_tips": [
+        "Use clean utensils to avoid introducing harmful bacteria.",
+        "Monitor for any signs of spoilage during fermentation."
+      ]
+    }
+  ]
+}

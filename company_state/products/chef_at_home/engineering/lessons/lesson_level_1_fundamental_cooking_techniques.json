@@ -1,0 +1,25 @@
+{
+  "lesson_title": "Fundamental Cooking Techniques",
+  "objectives": [
+    "Learn basic cooking techniques: boiling, sautéing, and steaming.",
+    "Understand the importance of timing and temperature in cooking."
+  ],
+  "steps": [
+    {
+      "step_number": 1,
+      "instruction": "Boil water in a pot and learn how to test for boiling point."
+    },
+    {
+      "step_number": 2,
+      "instruction": "Sauté vegetables in a pan with a little oil."
+    },
+    {
+      "step_number": 3,
+      "instruction": "Steam vegetables using a steamer basket."
+    }
+  ],
+  "safety_notes": [
+    "Be cautious when handling hot pots and pans.",
+    "Always use oven mitts when removing hot items from the stove."
+  ]
+}

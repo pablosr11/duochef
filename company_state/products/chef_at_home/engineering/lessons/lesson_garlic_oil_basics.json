@@ -1,0 +1,38 @@
+{
+  "id": "garlic_oil_basics",
+  "title": "Garlic & Olive Oil Basics",
+  "steps": [
+    {
+      "instruction": "Prepare your aromatics: mince or thinly slice garlic cloves. The finer you chop, the faster it will cook.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Add olive oil to a cold or slightly warm pan. The amount of oil depends on the dish, but generally enough to coat the bottom of the pan.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Add the garlic to the oil. Turn the heat to medium-low. We want to gently infuse the oil with garlic flavor, not fry the garlic quickly.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Cook the garlic, stirring frequently, until it is fragrant and just beginning to turn golden. This should take about 1-3 minutes. Watch it very closely – burnt garlic is bitter and will ruin your dish!",
+      "timer": {
+        "duration": 3,
+        "unit": "minutes"
+      },
+      "check": "Is the garlic fragrant and just starting to turn golden, not brown?"
+    },
+    {
+      "instruction": "If you are adding other ingredients, do so immediately after the garlic is ready to prevent it from burning. If you are just making a garlic-infused oil, remove the pan from the heat as soon as the garlic is fragrant and golden.",
+      "timer": null,
+      "check": null
+    }
+  ],
+  "skill_tags": ["aromatics", "garlic", "olive oil", "technique", "avoid burning"],
+  "unlock_rules": {
+    "prerequisite_milestone": "pasta_water_emulsify"
+  }
+}

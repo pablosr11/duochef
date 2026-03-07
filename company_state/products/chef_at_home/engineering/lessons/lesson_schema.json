@@ -1,0 +1,20 @@
+{
+  "id": "string",
+  "title": "string",
+  "description": "string",
+  "steps": [
+    {
+      "step_id": "string",
+      "instruction": "string",
+      "timer_seconds": "integer | null",
+      "check": {
+        "type": "string",
+        "prompt": "string"
+      }
+    }
+  ],
+  "skill_tags": ["string"],
+  "unlock_rules": {
+    "required_milestones": ["string"]
+  }
+}

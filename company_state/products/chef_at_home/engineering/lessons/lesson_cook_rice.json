@@ -1,0 +1,51 @@
+{
+  "id": "cook_rice",
+  "title": "Cook Rice Reliably",
+  "steps": [
+    {
+      "instruction": "Rinse your rice: Place the desired amount of rice (e.g., 1 cup) in a fine-mesh sieve. Rinse under cold running water until the water runs mostly clear. This removes excess starch and prevents gummy rice.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Combine rice and liquid: For white rice, a common ratio is 1 part rice to 1.5-2 parts liquid (water or broth). For example, 1 cup rice to 1.5 cups liquid. Add the rinsed rice and liquid to a saucepan.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Add salt: Season with salt to taste. About 1/2 teaspoon per cup of dry rice is a good starting point.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Bring to a boil: Place the saucepan over high heat and bring the liquid to a rolling boil.",
+      "timer": null,
+      "check": null
+    },
+    {
+      "instruction": "Simmer and cover: Once boiling, immediately reduce the heat to the lowest setting, cover the pot tightly with a lid, and let it simmer undisturbed. Do not lift the lid.",
+      "timer": {
+        "duration": 15,
+        "unit": "minutes"
+      },
+      "check": "Is the heat on the lowest setting and the lid tightly on?"
+    },
+    {
+      "instruction": "Rest the rice: After simmering, turn off the heat but leave the pot covered. Let the rice rest for at least 5-10 minutes. This allows the steam to finish cooking the grains evenly.",
+      "timer": {
+        "duration": 10,
+        "unit": "minutes"
+      },
+      "check": null
+    },
+    {
+      "instruction": "Fluff and serve: Remove the lid and gently fluff the rice with a fork. Serve immediately.",
+      "timer": null,
+      "check": "Is the rice tender and fluffy, with individual grains separated?"
+    }
+  ],
+  "skill_tags": ["rice", "staples", "simmering", "resting", "ratios"],
+  "unlock_rules": {
+    "prerequisite_milestone": "boil_water_safely"
+  }
+}

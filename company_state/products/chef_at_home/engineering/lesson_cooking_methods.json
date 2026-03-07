@@ -1,0 +1,14 @@
+{
+  "lesson_title": "Cooking Methods",
+  "description": "Explore different cooking methods and when to use them for various dishes.",
+  "steps": [
+    { "instruction": "Learn about different cooking methods: boiling, sautéing, steaming, and baking." },
+    { "instruction": "Understand the best uses for each cooking method." },
+    { "instruction": "Practice each method with simple ingredients." },
+    { "instruction": "Experiment with combining methods for complex dishes." }
+  ],
+  "safety_tips": [
+    "Always monitor food while cooking to prevent burning.",
+    "Use appropriate cookware for each method to ensure safety and efficiency."
+  ]
+}

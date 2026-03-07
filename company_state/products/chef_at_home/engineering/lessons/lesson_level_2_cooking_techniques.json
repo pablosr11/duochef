@@ -1,0 +1,22 @@
+{
+  "lesson_title": "Level 2 Cooking Techniques",
+  "description": "This lesson covers essential cooking techniques such as braising, poaching, and advanced knife skills.",
+  "steps": [
+    {
+      "step_number": 1,
+      "instruction": "Learn the technique of braising, including the types of foods suitable for this method."
+    },
+    {
+      "step_number": 2,
+      "instruction": "Understand poaching and practice poaching an egg."
+    },
+    {
+      "step_number": 3,
+      "instruction": "Master advanced knife skills, including julienne and chiffonade cuts."
+    }
+  ],
+  "safety_tips": [
+    "Always use a sharp knife to prevent accidents.",
+    "Be cautious with hot liquids when poaching."
+  ]
+}
