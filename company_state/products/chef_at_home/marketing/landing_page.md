@@ -1,11 +1,15 @@
-**Welcome to ChefAtHome!**  
-Unlock the chef within you with our interactive cooking lessons designed for beginners! Just like Duolingo for languages, we offer short, engaging lessons that fit into your busy schedule.  
+# Discover the Joy of Cooking with ChefAtHome
 
-**Why ChefAtHome?**  
-- **Learn at Your Own Pace**: Perfect for those with just 5–10 minutes to spare.  
-- **Safe Cooking**: Master kitchen safety and food hygiene as you learn.  
-- **Skill-Building**: Progress from basic techniques like boiling water to creating multi-step meals with confidence.  
-- **Gamified Learning**: Track your progress with our skill tree navigation and unlock new levels as you demonstrate your skills.  
+## Learn practical cooking skills from the comfort of your kitchen!
 
-**Join Our Waitlist Today!**  
-Don’t miss out on the culinary journey of a lifetime! Sign up now and be the first to know when we launch. Your journey to becoming a confident home chef starts here!
+### Introduction:
+Are you a complete beginner looking to build your cooking confidence? Or perhaps you're a busy adult who only has a few minutes to spare? ChefAtHome is designed for you! Our interactive lessons break down essential cooking techniques into bite-sized, manageable lessons, allowing you to learn at your own pace.
+
+### Key Features:
+- **Interactive Learning**: Experience cooking like never before with our step-by-step guidance and engaging lessons.
+- **Safety First**: Kitchen and food safety are our top priorities. Unlock milestones as you master safe cooking practices.
+- **Skill-Building Progression**: Start from the basics and progress to multi-step meals with confidence. Every lesson is a small win!
+- **Track Your Progress**: Stay motivated with our progress tracking system, earning rewards for your achievements.
+
+### Call to Action:
+Join the waitlist today and be among the first to experience the joy of cooking with ChefAtHome!

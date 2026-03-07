@@ -1,8 +1,3 @@
-**Post 1:**  
-🌟 Ready to become the chef you've always wanted to be? Join our waitlist for ChefAtHome and unlock your cooking potential with interactive lessons designed for beginners! 🍳 [Link to waitlist]  
-
-**Post 2:**  
-👩‍🍳 Feeling intimidated by recipes? ChefAtHome is here to help! Sign up for our waitlist and learn practical cooking skills at your own pace. Your culinary journey starts now! [Link to waitlist]  
-
-**Post 3:**  
-🔥 Cooking made fun and safe! Join the ChefAtHome waitlist today and discover how easy it is to master essential cooking techniques. Don't miss out! [Link to waitlist]
+1. Post Idea 1: "Ready to conquer your kitchen? Join ChefAtHome and learn to cook with confidence! 🍳✨ #CookingMadeEasy #ChefAtHome"
+2. Post Idea 2: "Short on time? Our interactive lessons fit into your busy schedule! Learn to cook in just 5-10 minutes a day. ⏰🥗 #BusyButCooking #ChefAtHome"
+3. Post Idea 3: "Unlock your cooking potential with ChefAtHome! From boiling water to mastering multi-step meals, we’re here to guide you every step of the way. 🔑🍝 #LearnToCook #ChefAtHome"
