@@ -1,0 +1,10 @@
+{
+  "lesson": "Salting Water for Cooking",
+  "description": "Learn how to properly salt water to enhance the flavor of your food.",
+  "steps": [
+    { "step": 1, "instruction": "After the water is boiling, add salt to the pot." },
+    { "step": 2, "instruction": "Use approximately 1-2 tablespoons of salt per gallon of water." },
+    { "step": 3, "instruction": "Stir the water to dissolve the salt before adding pasta or vegetables." }
+  ],
+  "safety": "Be cautious when adding salt to boiling water to avoid splashes."
+}

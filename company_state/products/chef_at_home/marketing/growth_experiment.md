@@ -1,13 +1,22 @@
-## Growth Experiment: Referral Program for ChefAtHome
+# Growth Experiment: A/B Testing on Landing Page
 
-### Objective:
-Increase traffic to the ChefAtHome landing page and grow the waitlist by incentivizing users to share the app with their friends and family.
+## Objective:
+To determine which headline on the landing page generates higher user engagement and sign-ups for the waitlist.
 
-### Plan:
-1. **Incentivize Sharing:** Offer users who refer a certain number of friends (e.g., 3 friends) early access to the app or exclusive cooking content (like a special lesson).
-2. **Create Unique Referral Links:** Each user will receive a unique link to share with their network. When someone signs up through that link, the original user will receive credit for the referral.
-3. **Promote on Social Media:** Encourage users to share their unique links on their social media profiles and tag ChefAtHome.
-4. **Track Referrals:** Use tracking software to monitor the number of referrals each user makes and automate rewards.
+## Hypothesis:
+Changing the headline will significantly impact the conversion rate of visitors signing up for the waitlist.
 
-### Expected Outcome:
-By implementing this referral program, we expect to see an increase in both the number of sign-ups to the waitlist and overall traffic to the landing page. This will create a community of early adopters who are invested in the success of ChefAtHome.
+## Experiment Design:
+1. **Version A**: "Cook Confidently, One Lesson at a Time!"
+2. **Version B**: "Transform Your Cooking Skills in Just Minutes a Day!"
+
+## Metrics to Measure:
+- Conversion Rate: The percentage of visitors who sign up for the waitlist.
+- Bounce Rate: The percentage of visitors who leave the landing page without interacting.
+
+## Duration:
+Run the A/B test for two weeks, collecting data on user behavior and engagement metrics.
+
+## Next Steps:
+1. Implement the A/B test using a website optimization tool.
+2. Monitor the results and analyze which version performs better.

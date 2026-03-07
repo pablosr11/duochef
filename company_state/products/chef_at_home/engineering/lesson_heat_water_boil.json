@@ -1,0 +1,10 @@
+{
+  "lesson": "How to Boil Water",
+  "description": "Learn the basic technique of boiling water, an essential cooking skill.",
+  "steps": [
+    { "step": 1, "instruction": "Fill a pot with water and place it on the stove." },
+    { "step": 2, "instruction": "Turn the heat to high and wait for the water to heat up." },
+    { "step": 3, "instruction": "Once bubbles form, the water is boiling. Use caution when handling hot water." }
+  ],
+  "safety": "Always handle boiling water with care to avoid burns."
+}

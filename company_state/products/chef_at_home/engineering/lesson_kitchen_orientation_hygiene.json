@@ -1,0 +1,10 @@
+{
+  "lesson": "Kitchen Hygiene",
+  "description": "Learn about maintaining hygiene while cooking.",
+  "steps": [
+    { "step": 1, "instruction": "Wash your hands before and after handling food." },
+    { "step": 2, "instruction": "Keep raw and cooked foods separate to avoid cross-contamination." },
+    { "step": 3, "instruction": "Clean surfaces and tools after each use." }
+  ],
+  "safety": "Maintaining hygiene is crucial for safe cooking practices."
+}

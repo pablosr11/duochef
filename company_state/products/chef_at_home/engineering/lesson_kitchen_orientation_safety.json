@@ -1,1 +1,10 @@
-{"lesson_title": "Kitchen Safety","description": "Understand the essential safety practices in the kitchen.","steps": [{"instruction": "Always wash your hands before cooking.","tip": "Use soap and water for at least 20 seconds."},{"instruction": "Keep knives and sharp tools out of reach of children.","tip": "Store them in a safe place when not in use."},{"instruction": "Be aware of your surroundings while cooking.","tip": "Avoid distractions and keep flammable materials away from heat sources."}]}
+{
+  "lesson": "Kitchen Safety",
+  "description": "Understand the importance of safety in the kitchen.",
+  "steps": [
+    { "step": 1, "instruction": "Learn about common kitchen hazards and how to avoid them." },
+    { "step": 2, "instruction": "Understand the importance of keeping your workspace clean and organized." },
+    { "step": 3, "instruction": "Practice safe food handling techniques to prevent contamination." }
+  ],
+  "safety": "Always prioritize safety when cooking and handling kitchen tools."
+}
