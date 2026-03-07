@@ -1,32 +1,29 @@
-// App Stability Testing Script
+// Stability testing script for the ChefAtHome app
 
-// This script will conduct thorough stability testing on the ChefAtHome app.
+const assert = require('assert');
+const app = require('../app');
 
-function stabilityTest() {
-    // Initialize variables for tracking stability metrics
-    let testResults = [];
-    let totalTests = 100;
-    let passedTests = 0;
+describe('App Stability Tests', function() {
+    it('should load the main application without crashing', function(done) {
+        app.start(function(err) {
+            assert.ifError(err);
+            done();
+        });
+    });
 
-    for (let i = 0; i < totalTests; i++) {
-        // Simulate a test case
-        let result = runTestCase(i);
-        testResults.push(result);
-        if (result) {
-            passedTests++;
-        }
-    }
+    it('should respond to user interactions without errors', function(done) {
+        // Simulate user interactions and check for errors
+        app.simulateUserInteraction(function(err) {
+            assert.ifError(err);
+            done();
+        });
+    });
 
-    // Log the results
-    console.log(`Total Tests: ${totalTests}`);
-    console.log(`Passed Tests: ${passedTests}`);
-    console.log(`Pass Rate: ${(passedTests / totalTests) * 100}%`);
-}
-
-function runTestCase(testId) {
-    // Simulate a test case execution
-    // In a real scenario, this would involve actual app interactions
-    return Math.random() > 0.1; // 90% chance of passing
-}
-
-stabilityTest();
+    it('should maintain performance under load', function(done) {
+        // Simulate load testing
+        app.simulateLoad(100, function(err) {
+            assert.ifError(err);
+            done();
+        });
+    });
+});

@@ -1,26 +1,34 @@
 {
-  "title": "Interactive Cooking Skills",
-  "description": "A lesson focused on practical cooking skills for beginners, including chopping, sautéing, and seasoning.",
+  "lesson_title": "Interactive Cooking Skills",
+  "description": "This lesson focuses on essential cooking techniques such as chopping, sautéing, and boiling. Users will learn through interactive tasks and quizzes to reinforce their skills.",
+  "objectives": [
+    "Understand basic knife skills and safety.",
+    "Learn how to sauté vegetables properly.",
+    "Master the technique of boiling water and cooking pasta."
+  ],
   "steps": [
     {
-      "step": 1,
-      "instruction": "Gather all necessary ingredients and tools."
+      "step_number": 1,
+      "instruction": "Gather your ingredients and tools: knife, cutting board, vegetables, and a pot of water."
     },
     {
-      "step": 2,
-      "instruction": "Learn the basic chopping techniques."
+      "step_number": 2,
+      "instruction": "Practice chopping the vegetables safely."
     },
     {
-      "step": 3,
-      "instruction": "Practice sautéing vegetables."
+      "step_number": 3,
+      "instruction": "Heat the pan and add oil, then sauté the chopped vegetables."
     },
     {
-      "step": 4,
-      "instruction": "Understand how to season your dishes."
+      "step_number": 4,
+      "instruction": "Boil water in a pot and add salt before cooking pasta."
     }
   ],
-  "safety_notes": [
-    "Always use a cutting board when chopping.",
-    "Be cautious with sharp knives."
+  "quizzes": [
+    {
+      "question": "What is the safest way to hold a knife?",
+      "options": ["By the blade", "By the handle", "With both hands"],
+      "correct_answer": "By the handle"
+    }
   ]
 }
