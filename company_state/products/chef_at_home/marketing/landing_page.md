@@ -1,25 +1,15 @@
-# Welcome to ChefAtHome!
+# ChefAtHome: Your Culinary Journey Starts Here!
 
-## Learn to Cook Like a Pro, Right at Home!
+Welcome to ChefAtHome, where cooking becomes a fun and interactive learning experience! Just like Duolingo teaches languages, we help you learn practical cooking skills from the comfort of your own kitchen. Whether you're starting from scratch or looking to refine your skills, ChefAtHome is designed for you!
 
-Are you ready to embark on a culinary journey? ChefAtHome is designed for complete beginners who want to learn practical cooking skills in a fun and engaging way, just like Duolingo teaches languages!
+## Why Choose ChefAtHome?
+- **Interactive Learning**: Our step-by-step lessons make cooking easy and enjoyable.
+- **Safe Cooking**: Learn kitchen safety and food handling techniques as you progress.
+- **Skill-Building**: Master essential cooking techniques like boiling, sautéing, and seasoning before tackling complex recipes.
+- **Short Lessons**: Perfect for busy adults! Each lesson takes just 5–10 minutes to complete.
+- **Confidence Building**: Unlock your potential with clear milestones and friendly guidance.
 
-### Why ChefAtHome?
-- **Short Lessons**: Our bite-sized lessons fit into your busy schedule—learn to cook in just 5–10 minutes a day!
-- **Confidence-Building**: With a friendly tone and clear steps, you'll feel empowered in the kitchen as you progress through our skill-building milestones.
-- **Safe Cooking**: Safety is our top priority! Learn essential kitchen and food safety skills before diving into cooking.
-- **Interactive Learning**: Our gamified approach keeps you motivated. Unlock levels and earn rewards as you master new skills!
+## Join Our Waitlist!
+Don't miss out on the chance to become a confident home cook! Sign up for our waitlist today and be the first to know when ChefAtHome launches. 
 
-### Get Started Today!
-Join our waitlist to be the first to know when ChefAtHome launches! Sign up now and take the first step towards becoming a confident home cook.
-
-[Join the Waitlist](#)
-
----
-
-### What to Expect:
-1. **Skill Development**: From boiling water to mastering core dishes like pasta and roasted veggies.
-2. **Progress Tracking**: Visualize your journey through our skill tree and celebrate your achievements.
-3. **Community Support**: Share your experiences and tips with fellow cooking enthusiasts once we launch!
-
-Don't wait any longer! Your culinary adventure awaits. Join the ChefAtHome waitlist today!
+[Join the Waitlist Now] (insert link)
