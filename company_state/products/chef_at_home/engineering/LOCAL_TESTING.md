@@ -1,27 +1,40 @@
-# ChefAtHome Local Testing
+# Local Testing Instructions for ChefAtHome
 
-This document outlines the steps for local testing of the ChefAtHome application and the marketing landing page.
+## Overview
+This document outlines the steps required to run the ChefAtHome app and the marketing landing page on a local machine for testing purposes.
 
-## Landing Page
+## Prerequisites
+- Node.js installed on your machine
+- Access to the project repository
 
-1.  **Prerequisites:** Ensure you have Node.js and npm installed.
-2.  **Clone the repository:**  (Assuming the landing page is in the same repo, or a separate one, I'll need to clarify this with marketing).
-3.  **Navigate to the landing page directory:** `cd <landing_page_directory>`
-4.  **Install dependencies:** `npm install`
-5.  **Run the landing page locally:** `npm start`
-6.  **Access the landing page:** Open your web browser and go to `http://localhost:3000` (or the port specified by `npm start`).
+## Steps to Run the App
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/chef_at_home.git
+   cd chef_at_home
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+4. Open your browser and navigate to `http://localhost:3000` to view the app.
 
-## Waitlist Functionality
+## Testing the Marketing Landing Page
+1. Navigate to the marketing directory:
+   ```bash
+   cd marketing
+   ```
+2. Open the landing page in your browser:
+   ```bash
+   open landing_page.html
+   ```
 
-1.  **Check the landing page code:** Verify that the waitlist form submits data correctly.
-2.  **Inspect the data storage:** Check where the waitlist data is stored (e.g., a local JSON file or a database).
-3.  **Test the submission:** Submit a test email address to the waitlist form.
-4.  **Verify the data:** Check the storage location to confirm that the test email address was saved.
+## Waitlist Persistence
+- Ensure the waitlist email collection feature is functional in the local environment, writing to a local JSON file or simple database.
 
-## Troubleshooting
-
-*   If the landing page doesn't load, check the console for errors.
-*   If the waitlist form doesn't submit, check the network tab in your browser's developer tools to see if there are any errors.
-*   If the data isn't saved, check the file permissions or database connection.
-
-This document will be updated as needed.
+## Safety Disclaimer
+- The app provides general educational guidance, not professional culinary training. Users must follow local food safety guidance.

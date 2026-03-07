@@ -2,33 +2,34 @@
 
 class InteractiveEngine {
     constructor() {
-        this.currentLesson = null;
+        this.timers = {};
         this.userProgress = {};
     }
 
-    startLesson(lesson) {
-        this.currentLesson = lesson;
-        this.showStep(0);
+    startLesson(lessonId) {
+        // Start the lesson and initialize timers
+        this.timers[lessonId] = setTimeout(() => this.completeLesson(lessonId), 300000); // 5 minutes
+        this.userProgress[lessonId] = { completed: false };
     }
 
-    showStep(stepIndex) {
-        // Logic to display the current step of the lesson
-        console.log(`Step ${stepIndex}: ${this.currentLesson.steps[stepIndex]}`);
-        // Implement timers and checks
+    completeLesson(lessonId) {
+        clearTimeout(this.timers[lessonId]);
+        this.userProgress[lessonId].completed = true;
+        this.checkUserProgress();
     }
 
-    completeStep(stepIndex) {
-        // Logic to mark a step as complete
-        console.log(`Completed step ${stepIndex}`);
-        this.showStep(stepIndex + 1);
+    checkUserProgress() {
+        // Logic to check if user has completed all lessons
+        const allCompleted = Object.values(this.userProgress).every(progress => progress.completed);
+        if (allCompleted) {
+            this.unlockNextLevel();
+        }
     }
 
-    saveProgress() {
-        // Logic to save user progress
-        console.log('Progress saved.');
+    unlockNextLevel() {
+        // Logic to unlock the next level
+        console.log('Next level unlocked!');
     }
+
+    // Additional methods for error recovery, UI updates, etc.
 }
-
-// Example usage
-const engine = new InteractiveEngine();
-engine.startLesson({ steps: ['Prepare ingredients', 'Heat the pan', 'Add oil', 'Sauté vegetables'] });

@@ -1,23 +1,28 @@
-# Welcome to ChefAtHome
+# Welcome to ChefAtHome!
 
-## Learn to Cook, Just Like You Learn a Language!
+## Learn to Cook with Confidence
+Are you ready to embark on a culinary adventure? At ChefAtHome, we believe that cooking should be fun, safe, and accessible to everyone, regardless of skill level. Just like Duolingo teaches languages, we teach you how to cook!
 
-At ChefAtHome, we believe everyone can learn to cook confidently and safely, just like you learn a new language with Duolingo. Our app offers short, interactive lessons designed for busy adults and complete beginners who want to master practical cooking skills.
+### Why ChefAtHome?
+- **Interactive Lessons**: Dive into bite-sized lessons designed for busy adults. Each lesson takes just 5–10 minutes, perfect for your schedule!
+- **Safety First**: We prioritize kitchen and food safety as explicit milestones, ensuring you cook with confidence.
+- **Skill Progression**: Start as a complete beginner and unlock skills step-by-step, from boiling water to mastering multi-step meals.
+- **Gamified Experience**: Track your progress visually with our skill tree navigation and earn rewards as you master new techniques.
 
-### Key Features:
-- **Interactive Lessons**: Engage with our step-by-step lessons that fit into your busy schedule. Each lesson takes just 5–10 minutes to complete, making it easy to learn at your own pace.
-- **Gamified Experience**: Track your progress with our unique skill tree navigation. Unlock new levels and skills as you demonstrate mastery of essential cooking techniques.
-- **Safety First**: Learn about kitchen and food safety as you progress through your lessons. We prioritize your safety and confidence in the kitchen.
-- **Confidence-Building Approach**: Our friendly tone and clear step-by-step instructions ensure that you feel supported every step of the way.
+### What You Will Learn
+- Basic kitchen safety and hygiene
+- Essential cooking techniques like boiling, sautéing, and seasoning
+- Confidence-building skills to tackle new recipes
 
-### Why Choose ChefAtHome?
-Whether you're intimidated by recipes or simply want to improve your cooking skills, ChefAtHome is designed to help you succeed. Our focus on skills over recipes means you’ll learn transferable techniques that will empower you to create delicious meals.
-
-### Join the Waitlist!
-Don't miss out on the chance to transform your cooking journey. Join our waitlist today and be the first to know when ChefAtHome is live!
+### Join Our Waitlist!
+Be the first to experience ChefAtHome when we launch! Sign up for our waitlist and get exclusive updates:
 
 [Join the Waitlist](#)
 
----
+### Follow Us
+Stay connected and follow our journey on social media:
+- [Instagram](#)
+- [Facebook](#)
+- [Twitter](#)
 
-Stay tuned for updates, and get ready to become the chef you always wanted to be!
+ChefAtHome – Cooking made easy, safe, and fun! Let's get cooking!
