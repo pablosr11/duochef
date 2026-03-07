@@ -1,22 +1,11 @@
-# Welcome to ChefAtHome!
+**Welcome to ChefAtHome!**  
+Unlock the chef within you with our interactive cooking lessons designed for beginners! Just like Duolingo for languages, we offer short, engaging lessons that fit into your busy schedule.  
 
-## Discover the Joy of Cooking!
+**Why ChefAtHome?**  
+- **Learn at Your Own Pace**: Perfect for those with just 5–10 minutes to spare.  
+- **Safe Cooking**: Master kitchen safety and food hygiene as you learn.  
+- **Skill-Building**: Progress from basic techniques like boiling water to creating multi-step meals with confidence.  
+- **Gamified Learning**: Track your progress with our skill tree navigation and unlock new levels as you demonstrate your skills.  
 
-Are you ready to embark on a culinary adventure? At ChefAtHome, we believe that everyone can learn to cook delicious meals from the comfort of their kitchen. Our interactive cooking lessons are designed to take you from a complete beginner to a confident home chef in no time!
-
-### Why ChefAtHome?
-- **Interactive Learning**: Our lessons are short and engaging, allowing you to learn cooking techniques at your own pace.
-- **Safety First**: We prioritize kitchen safety and food safety, ensuring you feel confident as you cook.
-- **Skill-Building Progression**: Unlock new lessons as you progress, mastering essential cooking skills before tackling complex dishes.
-
-### What to Expect:
-- **Gamified Experience**: Enjoy a fun and motivating learning journey with milestones that celebrate your achievements.
-- **Community Support**: Join a community of fellow cooking enthusiasts, share your progress, and learn from one another.
-- **Expert Guidance**: Each lesson is crafted by cooking experts, providing you with practical skills that translate into real-life cooking.
-
-### Get Started Today!
-Don’t miss out on the opportunity to transform your cooking skills. Sign up for our waitlist now and be the first to know when we launch! 
-
-[Join the Waitlist](#)
-
-Let’s make cooking enjoyable and accessible for everyone!
+**Join Our Waitlist Today!**  
+Don’t miss out on the culinary journey of a lifetime! Sign up now and be the first to know when we launch. Your journey to becoming a confident home chef starts here!

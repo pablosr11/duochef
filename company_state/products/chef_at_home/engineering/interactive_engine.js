@@ -3,30 +3,25 @@
 class InteractiveEngine {
     constructor() {
         this.currentLesson = null;
-        this.timers = {};
-        this.userChecks = [];
+        this.userProgress = {};
     }
 
     startLesson(lesson) {
         this.currentLesson = lesson;
-        this.initializeUI();
-        this.startTimers();
+        this.displayLesson();
     }
 
-    initializeUI() {
-        // Code to initialize UI elements for the lesson
+    displayLesson() {
+        // Logic to display lesson content
     }
 
-    startTimers() {
-        // Code to start timers for lesson activities
+    checkUserInput(input) {
+        // Logic to check user input
     }
 
-    checkUserProgress() {
-        // Code to check if the user has completed the lesson
+    saveProgress() {
+        // Logic to save user progress
     }
-
-    // Additional methods for handling user interactions
 }
 
-// Export the InteractiveEngine class
-module.exports = InteractiveEngine;
+const engine = new InteractiveEngine();

@@ -1,18 +1,8 @@
-### Post 1: 
-🍳 Ready to cook with confidence? Join ChefAtHome, your personal cooking coach! Learn practical cooking skills in just 5-10 minutes a day. 
-👉 [Join the Waitlist Now](#)
+**Post 1:**  
+🌟 Ready to become the chef you've always wanted to be? Join our waitlist for ChefAtHome and unlock your cooking potential with interactive lessons designed for beginners! 🍳 [Link to waitlist]  
 
-### Post 2: 
-👩‍🍳 Cooking made easy! ChefAtHome is designed for beginners. Unlock new skills and recipes as you progress. 
-🌟 Join our waitlist and start your culinary journey today! 
-👉 [Join the Waitlist Now](#)
+**Post 2:**  
+👩‍🍳 Feeling intimidated by recipes? ChefAtHome is here to help! Sign up for our waitlist and learn practical cooking skills at your own pace. Your culinary journey starts now! [Link to waitlist]  
 
-### Post 3: 
-🥗 Say goodbye to intimidating recipes! With ChefAtHome, you’ll learn essential cooking techniques safely and confidently. 
-🚀 Don’t miss out! Sign up for our waitlist now! 
-👉 [Join the Waitlist Now](#)
-
-### Post 4: 
-🍽️ Want to impress your friends with your cooking skills? ChefAtHome will help you master the basics and more. 
-📅 Join our waitlist to be the first to know when we launch! 
-👉 [Join the Waitlist Now](#)
+**Post 3:**  
+🔥 Cooking made fun and safe! Join the ChefAtHome waitlist today and discover how easy it is to master essential cooking techniques. Don't miss out! [Link to waitlist]

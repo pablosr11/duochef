@@ -1,21 +1,17 @@
-# Welcome to ChefAtHome!
+Subject: Welcome to the ChefAtHome Waitlist!
 
-Hi [User Name],
+Dear [Name],
 
-Welcome to ChefAtHome, your new favorite way to learn cooking skills! We're thrilled to have you join our community of aspiring home chefs.
+Thank you for signing up for the ChefAtHome waitlist! We’re thrilled to have you join our community of aspiring chefs.
 
-Are you ready to:
+At ChefAtHome, we’re dedicated to helping you learn practical cooking skills the fun and interactive way. Our app will guide you through short lessons that fit into your busy lifestyle, ensuring that you can learn at your own pace and build confidence in the kitchen.
 
-*   Gain confidence in the kitchen?
-*   Master essential cooking techniques?
-*   Cook delicious meals in just minutes a day?
+Here’s what you can look forward to:
+- Engaging lessons on essential cooking techniques.
+- A focus on kitchen safety and hygiene.
+- A supportive community of fellow cooking enthusiasts.
 
-ChefAtHome makes it easy. Our bite-sized, interactive lessons are designed for absolute beginners and busy schedules. Learn at your own pace, build streaks, and unlock new culinary skills with our unique skill tree.
+Stay tuned for updates as we approach our launch date. We can’t wait for you to start your culinary adventure with us!
 
-**Ready to start your journey?**
-
-[Start Your First Lesson Now]
-
-Happy Cooking!
-
+Happy Cooking,
 The ChefAtHome Team
