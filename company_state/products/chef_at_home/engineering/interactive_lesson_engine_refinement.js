@@ -2,35 +2,42 @@
 
 class InteractiveLessonEngine {
     constructor() {
-        this.userFeedback = [];
-        this.engagementMetrics = {};
+        this.lessons = [];
+        this.currentLessonIndex = 0;
     }
 
-    collectFeedback(feedback) {
-        this.userFeedback.push(feedback);
-        this.analyzeFeedback();
+    loadLessons(lessons) {
+        this.lessons = lessons;
     }
 
-    analyzeFeedback() {
-        // Logic to analyze feedback and improve lesson features
-        console.log('Analyzing user feedback...');
-    }
-
-    trackEngagement(userId, lessonId) {
-        // Logic to track user engagement with lessons
-        if (!this.engagementMetrics[userId]) {
-            this.engagementMetrics[userId] = {};
+    startLesson() {
+        if (this.lessons.length > 0) {
+            this.displayLesson(this.lessons[this.currentLessonIndex]);
         }
-        this.engagementMetrics[userId][lessonId] = (this.engagementMetrics[userId][lessonId] || 0) + 1;
     }
 
-    unlockNewLevel(userId) {
-        // Logic to unlock new levels based on user progress
-        console.log(`Unlocking new level for user ${userId}`);
+    displayLesson(lesson) {
+        console.log(`Starting lesson: ${lesson.title}`);
+        // Code to display lesson content
+    }
+
+    nextLesson() {
+        if (this.currentLessonIndex < this.lessons.length - 1) {
+            this.currentLessonIndex++;
+            this.startLesson();
+        } else {
+            console.log('All lessons completed!');
+        }
+    }
+
+    // New method to handle user feedback
+    handleUserFeedback(feedback) {
+        console.log(`User feedback received: ${feedback}`);
+        // Logic to enhance lessons based on feedback
     }
 }
 
 // Example usage
 const lessonEngine = new InteractiveLessonEngine();
-lessonEngine.collectFeedback('Loved the interactive elements!');
-lessonEngine.trackEngagement('user123', 'lesson1');
+lessonEngine.loadLessons([{ title: 'Boiling Water' }, { title: 'Basic Knife Skills' }]);
+lessonEngine.startLesson();

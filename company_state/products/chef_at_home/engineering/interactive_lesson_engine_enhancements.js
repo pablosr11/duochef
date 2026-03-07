@@ -1,21 +1,32 @@
-// Enhancements for the Interactive Lesson Engine
+// Enhancements to the Interactive Lesson Engine
 
-// Function to track user progress
-function trackUserProgress(userId, lessonId, progress) {
-    // Logic to save user progress
+class InteractiveLessonEngine {
+    constructor() {
+        this.currentLesson = null;
+        this.userProgress = {};
+    }
+
+    startLesson(lesson) {
+        this.currentLesson = lesson;
+        this.displayLesson();
+    }
+
+    displayLesson() {
+        // Logic to display the lesson step-by-step
+        console.log(`Starting lesson: ${this.currentLesson.title}`);
+        // Additional UI logic and integrated timers
+    }
+
+    checkUserInput(input) {
+        // Logic to check user input against expected answers
+        // Provide feedback and error recovery options
+    }
+
+    saveProgress() {
+        // Logic to save user progress (XP, streaks, unlocked levels)
+    }
 }
 
-// Function to unlock new levels based on user performance
-function unlockNewLevel(userId, currentLevel) {
-    // Logic to unlock new levels
-}
-
-// Function to provide feedback based on user actions
-function provideFeedback(userId, lessonId, userAction) {
-    // Logic to provide feedback
-}
-
-// Example of how these functions can be used
-trackUserProgress('user123', 'lesson1', 'completed');
-unlockNewLevel('user123', 1);
-provideFeedback('user123', 'lesson1', 'correct');
+// Example usage
+const lessonEngine = new InteractiveLessonEngine();
+lessonEngine.startLesson({ title: 'Basic Knife Skills' });

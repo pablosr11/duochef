@@ -1,33 +1,27 @@
-// Interactive Lesson Engine for ChefAtHome
+// Interactive Lesson Engine Logic
 
 class InteractiveLessonEngine {
     constructor() {
-        this.currentStep = 0;
-        this.steps = [];
-        this.isCompleted = false;
+        this.currentLesson = null;
+        this.userProgress = {};
     }
 
-    loadLesson(steps) {
-        this.steps = steps;
-        this.currentStep = 0;
-        this.isCompleted = false;
+    startLesson(lessonId) {
+        this.currentLesson = lessonId;
+        this.trackProgress();
+        // Additional logic for starting the lesson
     }
 
-    nextStep() {
-        if (this.currentStep < this.steps.length - 1) {
-            this.currentStep++;
-        } else {
-            this.isCompleted = true;
-        }
+    trackProgress() {
+        // Logic to track user progress through the lesson
     }
 
-    getCurrentStep() {
-        return this.steps[this.currentStep];
-    }
-
-    isLessonCompleted() {
-        return this.isCompleted;
+    completeLesson() {
+        // Logic to mark the lesson as complete
+        this.currentLesson = null;
     }
 }
 
-module.exports = InteractiveLessonEngine;
+// Example usage
+const lessonEngine = new InteractiveLessonEngine();
+lessonEngine.startLesson('lesson_kitchen_safety');
