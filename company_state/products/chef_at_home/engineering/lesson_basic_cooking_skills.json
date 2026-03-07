@@ -1,0 +1,27 @@
+{
+  "lesson_title": "Basic Cooking Skills",
+  "description": "This lesson covers essential cooking skills for beginners, including chopping, boiling, and sautéing.",
+  "steps": [
+    {
+      "step_number": 1,
+      "instruction": "Gather your ingredients and tools."
+    },
+    {
+      "step_number": 2,
+      "instruction": "Learn how to chop vegetables safely."
+    },
+    {
+      "step_number": 3,
+      "instruction": "Practice boiling water and cooking pasta."
+    },
+    {
+      "step_number": 4,
+      "instruction": "Sauté vegetables in a pan with oil."
+    }
+  ],
+  "milestones": [
+    "Chop at least three different vegetables.",
+    "Successfully boil pasta.",
+    "Sauté vegetables without burning them."
+  ]
+}

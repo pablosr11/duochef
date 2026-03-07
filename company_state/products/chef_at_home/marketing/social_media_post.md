@@ -1,13 +1,9 @@
-🌟 Ready to unleash your inner chef? Join the ChefAtHome waitlist today! 🍳
+🌟 Ready to master the art of cooking? Join the ChefAtHome waitlist today! 🌟
 
-At ChefAtHome, we believe that cooking should be fun, safe, and accessible to everyone. Our app is designed like Duolingo for cooking, with short, interactive lessons that fit into your busy schedule. 
+Our interactive cooking lessons are designed for beginners and busy adults who want to learn new skills in just 5-10 minutes a day. 
 
-✨ **Why ChefAtHome?**
-- **Quick Lessons**: Perfect for busy adults—learn in just 5-10 minutes!
-- **Safety First**: Master kitchen safety and food safety as you learn.
-- **Skill Building**: Progress from beginner to confident cook with our skill tree navigation.
-- **Gamified Experience**: Enjoy learning with engaging, interactive lessons that keep you motivated.
+Unlock your culinary potential with safety-first lessons and a gamified experience that keeps you motivated!
 
-👩‍🍳 Join our waitlist now and be the first to know when we launch! [Link to landing page] 
+👉 [Join the Waitlist Now!]
 
 #ChefAtHome #CookingSkills #LearnToCook #JoinTheWaitlist
