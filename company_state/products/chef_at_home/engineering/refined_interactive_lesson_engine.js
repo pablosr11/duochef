@@ -1,15 +1,13 @@
-// Enhanced Interactive Lesson Engine based on user feedback
+// Refined Interactive Lesson Engine
 
-class EnhancedInteractiveLessonEngine {
+class InteractiveLessonEngine {
     constructor() {
         this.currentLesson = null;
         this.userProgress = {};
-        this.lessonHistory = [];
     }
 
     startLesson(lessonId) {
         this.currentLesson = this.getLesson(lessonId);
-        this.lessonHistory.push(lessonId);
         this.displayLesson();
     }
 
@@ -23,13 +21,8 @@ class EnhancedInteractiveLessonEngine {
         console.log(this.currentLesson);
     }
 
-    trackProgress() {
-        // Logic to track user progress through lessons
-        console.log('User progress tracked.');
-    }
-
     // Additional methods for user interaction, tracking progress, etc.
 }
 
-const lessonEngine = new EnhancedInteractiveLessonEngine();
+const lessonEngine = new InteractiveLessonEngine();
 lessonEngine.startLesson('lesson_1');

@@ -1,40 +1,20 @@
 # Local Testing Instructions for ChefAtHome
 
-## Overview
-This document outlines the steps required to run the ChefAtHome app and the marketing landing page on a local machine for testing purposes.
+## Setup
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Ensure you have the latest version of Node.js installed.
 
-## Prerequisites
-- Node.js installed on your machine
-- Access to the project repository
+## Running the App
+- To start the application, run `npm start`.
+- The app will be available at `http://localhost:3000`.
 
-## Steps to Run the App
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/chef_at_home.git
-   cd chef_at_home
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-4. Open your browser and navigate to `http://localhost:3000` to view the app.
+## Testing the Waitlist Feature
+1. Navigate to the waitlist page.
+2. Enter a valid email address and submit.
+3. Check the local JSON file to ensure the email is saved correctly.
 
-## Testing the Marketing Landing Page
-1. Navigate to the marketing directory:
-   ```bash
-   cd marketing
-   ```
-2. Open the landing page in your browser:
-   ```bash
-   open landing_page.html
-   ```
-
-## Waitlist Persistence
-- Ensure the waitlist email collection feature is functional in the local environment, writing to a local JSON file or simple database.
-
-## Safety Disclaimer
-- The app provides general educational guidance, not professional culinary training. Users must follow local food safety guidance.
+## Testing the Interactive Lesson Engine
+1. Start the application and navigate to the lesson section.
+2. Select a lesson and ensure it displays correctly.
+3. Track user progress and ensure it updates in local storage.

@@ -1,37 +1,30 @@
-// Enhancements to the Interactive Lesson Engine based on user feedback
+// Interactive Lesson Engine Enhancements
+
+// This file contains enhancements to the Interactive Lesson Engine based on user feedback.
 
 class InteractiveLessonEngine {
     constructor() {
         this.lessons = [];
-        this.currentLessonIndex = 0;
+        this.currentLesson = null;
     }
 
     addLesson(lesson) {
         this.lessons.push(lesson);
     }
 
-    startLesson() {
-        if (this.lessons.length > 0) {
-            this.displayLesson(this.lessons[this.currentLessonIndex]);
+    startLesson(lessonId) {
+        this.currentLesson = this.lessons.find(lesson => lesson.id === lessonId);
+        if (this.currentLesson) {
+            this.currentLesson.start();
         }
     }
 
-    displayLesson(lesson) {
-        console.log(`Starting lesson: ${lesson.title}`);
-        // Additional logic to display lesson content
-    }
-
-    nextLesson() {
-        this.currentLessonIndex++;
-        if (this.currentLessonIndex < this.lessons.length) {
-            this.displayLesson(this.lessons[this.currentLessonIndex]);
-        } else {
-            console.log('All lessons completed!');
-        }
+    // Additional methods for handling user interactions and feedback
+    handleUserFeedback(feedback) {
+        // Process user feedback to improve lesson flow
     }
 }
 
 // Example usage
 const lessonEngine = new InteractiveLessonEngine();
-lessonEngine.addLesson({ title: 'Boiling Water', content: '...' });
-lessonEngine.startLesson();
+lessonEngine.addLesson(new Lesson(1, 'Boiling Water'));
