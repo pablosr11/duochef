@@ -14,9 +14,13 @@ from company import (
 STATE_ROOT = Path(COMPANY_STATE_DIR)
 BACKLOG_PATH = STATE_ROOT / BACKLOG_FILE
 LOGS_PATH = STATE_ROOT / LOGS_DIR
-PRODUCTS_PATH = STATE_ROOT / PRODUCTS_DIR
 
-DEFAULT_BACKLOG = {"tasks": [], "active_product": None, "next_id": 1}
+# PRODUCTION REDIRECTS
+# These point the agents to the actual repository folders for shipping.
+PRODUCTS_PATH = Path("/Users/ps/repos/agentic-business-organization/app")  # App Code Home
+MARKETING_PATH = Path("/Users/ps/repos/agentic-business-organization/website") # Website Home
+
+DEFAULT_BACKLOG = {"tasks": [], "active_product": "chef_at_home", "next_id": 1}
 CHANGELOG_PATH = STATE_ROOT / "changelog.md"
 
 
@@ -24,7 +28,10 @@ def ensure_state_tree() -> None:
     """Create company_state/ directory structure if it does not exist."""
     STATE_ROOT.mkdir(parents=True, exist_ok=True)
     LOGS_PATH.mkdir(parents=True, exist_ok=True)
+    # Ensure production paths exist
     PRODUCTS_PATH.mkdir(parents=True, exist_ok=True)
+    MARKETING_PATH.mkdir(parents=True, exist_ok=True)
+    
     if not BACKLOG_PATH.exists():
         with open(BACKLOG_PATH, "w", encoding="utf-8") as f:
             json.dump(DEFAULT_BACKLOG, f, indent=2)
@@ -41,7 +48,7 @@ def load_backlog() -> dict:
 
 def save_backlog(backlog: dict) -> None:
     """Persist backlog to company_state/backlog.json."""
-    ensure_state_tree()  # Ensures dirs exist; does not recurse into save_backlog
+    ensure_state_tree()
     with open(BACKLOG_PATH, "w", encoding="utf-8") as f:
         json.dump(backlog, f, indent=2)
 
@@ -104,30 +111,25 @@ def get_active_product() -> str | None:
     return load_backlog().get("active_product")
 
 
+# Path Redirection Logic
 def product_dir(slug: str) -> Path:
-    """Return the path to a product's directory."""
-    path = PRODUCTS_PATH / slug
-    path.mkdir(parents=True, exist_ok=True)
-    return path
+    """Point directly to root /app for the active app."""
+    return PRODUCTS_PATH
 
 
 def product_spec_path(slug: str) -> Path:
-    """Return the path to a product's spec.md."""
-    return product_dir(slug) / "spec.md"
+    """Point to the root /app/spec.md."""
+    return PRODUCTS_PATH / "spec.md"
 
 
 def product_engineering_dir(slug: str) -> Path:
-    """Return the path to a product's engineering/ directory."""
-    path = product_dir(slug) / "engineering"
-    path.mkdir(parents=True, exist_ok=True)
-    return path
+    """Point directly to root /app."""
+    return PRODUCTS_PATH
 
 
 def product_marketing_dir(slug: str) -> Path:
-    """Return the path to a product's marketing/ directory."""
-    path = product_dir(slug) / "marketing"
-    path.mkdir(parents=True, exist_ok=True)
-    return path
+    """Point directly to root /website."""
+    return MARKETING_PATH
 
 
 def log_path(agent: str) -> Path:
@@ -206,7 +208,6 @@ def read_engineering_file(slug: str, filename: str) -> str | None:
     path = base / filename
     if not path.exists():
         # Also check if it's in a subdirectory like 'lessons/'
-        # This is a bit of a hack but helpful for the current structure
         for sub in base.iterdir():
             if sub.is_dir() and (sub / filename).exists():
                 return (sub / filename).read_text(encoding="utf-8")

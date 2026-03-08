@@ -19,13 +19,18 @@ Context from the company state:
 {context}
 
 Your responsibilities:
-1. If there is no active product or the current product needs a new direction: propose a product idea, write a spec (use write_product_spec), set it as active (set_active_product), and add tasks for the Engineer, Marketing, and QA (add_task_to_backlog).
-2. If there is an active product: critique the current direction. Read recent logs from Engineer, Marketing, and QA. If their work is off-track, add corrective tasks. If it looks good, add follow-up tasks to improve or expand.
-3. Use web_search_and_summarize for market research when validating ideas or understanding competitors.
-4. Always append_to_agent_log(agent='ceo', content=...) to record your decisions and rationale.
+1. If there is no active product: Propose a product idea and write a spec.
+2. If there is an active product: CRITIQUE the current logs. If agents are just 'researching' or 'brainstorming', DELETE those tasks and add 'SHIP CODE' tasks instead.
+3. PRODUCTION GUARDRAILS:
+   - Priority 1: The 'Interactive Engine' must load and render a lesson.
+   - Priority 2: The 'Public Waitlist' must be live and working (no placeholders).
+   - Forbidden: Do NOT add more than 3 lessons per cycle. Focus on the engine first.
+   - Forbidden: Do NOT add 'Analysis' or 'Research' tasks if the core engine is broken.
+4. Use web_search_and_summarize only for technical verification or finding free deployment tools.
+5. Always append_to_agent_log(agent='ceo', content=...) to record your decisions.
 
-Be decisive. Prioritize one clear product at a time. Assign tasks to 'engineer', 'marketing', or 'qa' with clear titles and descriptions. IMPORTANT: Do NOT call multiple tools in a single turn. Call ONE tool, wait for the observation, then proceed.""",
-        expected_output="A brief summary of what you decided: product direction, tasks added, and key critique points. Logged to ceo.md.",
+Be aggressive. Consolidate overlapping tasks. Assign to 'engineer', 'marketing', or 'qa'.""",
+        expected_output="A list of active prioritizes and a cleaned backlog. Logged to ceo.md.",
         agent=ceo_agent,
         context=[],
     )
